@@ -1,0 +1,180 @@
+<!-- 
+  ISTRUZIONI IMPLEMENTAZIONE:
+  Inserire questo codice DENTRO il <head> della home page (prima del </head>)
+  Mantenere tutti gli altri meta tag e link esistenti.
+  Questo blocco JSON-LD va AGGIUNTO, non SOSTITUISCE nulla.
+-->
+
+<!-- Schema Markup: ProfessionalService + LocalBusiness -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "ProfessionalService",
+      "@id": "https://www.ermannocolazzo.it/#professional-service",
+      "name": "Dott. Ermanno Colazzo",
+      "description": "Perito Industriale specializzato in arti grafiche, Grafologo forense, Consulente Tecnico d'Ufficio (CTU) e Consulente Tecnico di Parte (CTP). Perizie giudiziarie e stragiudiziali su firme, manoscritti, documenti e prodotti della stampa in tutta Italia.",
+      "url": "https://www.ermannocolazzo.it",
+      "image": "https://www.ermannocolazzo.it/logo-emblem.png",
+      "logo": "https://www.ermannocolazzo.it/logo-emblem.png",
+      
+      "telephone": "+39 349 7584968",
+      "email": "ermanno.colazzo@gmail.com",
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "Customer Service",
+        "telephone": "+39 349 7584968",
+        "email": "ermanno.colazzo@gmail.com",
+        "areaServed": "IT",
+        "availableLanguage": "it"
+      },
+      
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Muro Leccese 3",
+        "addressLocality": "Maglie",
+        "postalCode": "73024",
+        "addressRegion": "LE",
+        "addressCountry": "IT"
+      },
+      
+      "areaServed": "IT",
+      "serviceArea": {
+        "@type": "Country",
+        "name": "Italy"
+      },
+      
+      "priceRange": "$$",
+      
+      "knowsAbout": [
+        "Perizie grafologiche",
+        "Grafologia forense",
+        "Analisi e comparazione delle scritture",
+        "Autenticazione di firme",
+        "Perizie su documenti manoscritti",
+        "Perizie nelle arti grafiche",
+        "Analisi tecnica della stampa",
+        "Stima di macchinari e attrezzature",
+        "Consulenza CTU",
+        "Consulenza CTP",
+        "Valutazione di alterazioni documentali"
+      ],
+      
+      "hasCredential": [
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Perito Industriale",
+          "credentialCategory": "Professional License",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Ordine dei Periti Industriali della Provincia di Lecce",
+            "url": "https://www.albounicoperind.it/"
+          },
+          "identifier": "848"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Consulente Tecnico d'Ufficio (CTU)",
+          "credentialCategory": "Professional License",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Tribunale Ordinario di Lecce",
+            "url": "https://alboctuelenchi.giustizia.it/"
+          },
+          "identifier": "131",
+          "areaServed": "IT"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Perito (Albo Periti)",
+          "credentialCategory": "Professional License",
+          "issuedBy": {
+            "@type": "Organization",
+            "name": "Tribunale Ordinario di Lecce",
+            "url": "https://alboctuelenchi.giustizia.it/"
+          },
+          "identifier": "27",
+          "areaServed": "IT"
+        },
+        {
+          "@type": "EducationalOccupationalCredential",
+          "name": "Diploma Perito Industriale Grafico",
+          "credentialCategory": "Educational Credential",
+          "issuedBy": {
+            "@type": "EducationalOrganization",
+            "name": "Istituto Tecnico Industriale G.B. Bodoni",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Torino",
+              "addressCountry": "IT"
+            }
+          }
+        }
+      ],
+      
+      "sameAs": [
+        "https://www.albounicoperind.it/",
+        "https://alboctuelenchi.giustizia.it/"
+      ],
+      
+      "makesOffer": [
+        {
+          "@type": "Offer",
+          "@id": "https://www.ermannocolazzo.it/#offer-perizie-grafologiche",
+          "name": "Perizie Grafologiche",
+          "url": "https://www.ermannocolazzo.it/perizie-grafologiche/",
+          "description": "Accertamenti tecnici sull'autenticità di firme, manoscritti e documenti mediante metodologia grafologico-forense"
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://www.ermannocolazzo.it/#offer-comparazione-scritture",
+          "name": "Comparazione delle Scritture",
+          "url": "https://www.ermannocolazzo.it/comparazione-scritture/",
+          "description": "Analisi comparativa della grafia per identificazione dell'autore e verifica di autografia o apocrifia"
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://www.ermannocolazzo.it/#offer-perizie-arti-grafiche",
+          "name": "Perizie nelle Arti Grafiche",
+          "url": "https://www.ermannocolazzo.it/perizie-arti-grafiche/",
+          "description": "Analisi tecnica di prodotti della stampa tipografica, offset, digitale, flessografica e altre tecnologie"
+        },
+        {
+          "@type": "Offer",
+          "@id": "https://www.ermannocolazzo.it/#offer-stima-macchinari",
+          "name": "Stima di Macchinari e Attrezzature",
+          "url": "https://www.ermannocolazzo.it/stima-macchinari/",
+          "description": "Perizie estimative e valutazioni economiche di macchine e impianti del settore grafico"
+        }
+      ]
+    },
+    {
+      "@type": "LocalBusiness",
+      "@id": "https://www.ermannocolazzo.it/#local-business",
+      "name": "Dott. Ermanno Colazzo - Studio Peritale",
+      "description": "Studio professionale di perizie giudiziarie e stragiudiziali",
+      "image": "https://www.ermannocolazzo.it/logo-emblem.png",
+      "url": "https://www.ermannocolazzo.it",
+      "telephone": "+39 349 7584968",
+      "email": "ermanno.colazzo@gmail.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Via Muro Leccese 3",
+        "addressLocality": "Maglie",
+        "postalCode": "73024",
+        "addressRegion": "LE",
+        "addressCountry": "IT"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": "40.114079",
+        "longitude": "18.310372"
+      },
+      "areaServed": "IT"
+    }
+  ]
+}
+</script>
+
+<!-- END Schema Markup -->
