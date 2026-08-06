@@ -1,0 +1,10 @@
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /private/
+
+Crawl-delay: 1
+Request-rate: 30/60
+
+Sitemap: https://www.ermannocolazzo.it/sitemap.xml
+Host: https://www.ermannocolazzo.it
