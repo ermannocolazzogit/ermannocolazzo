@@ -14,71 +14,7 @@
     <title>Perizie grafologiche | Dott. Ermanno Colazzo - Perito Grafologo</title>
     
     <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@graph": [
-        {
-          "@type": "ProfessionalService",
-          "@id": "https://www.ermannocolazzo.it/#professional-service",
-          "name": "Dott. Ermanno Colazzo",
-          "description": "Perito Industriale specializzato in arti grafiche, Grafologo forense, Consulente Tecnico d'Ufficio (CTU) e Consulente Tecnico di Parte (CTP). Perizie giudiziarie e stragiudiziali su firme, manoscritti, documenti e prodotti della stampa in tutta Italia.",
-          "url": "https://www.ermannocolazzo.it",
-          "image": "https://www.ermannocolazzo.it/logo-emblem.png",
-          "logo": "https://www.ermannocolazzo.it/logo-emblem.png",
-          "telephone": "+39 349 7584968",
-          "email": "ermanno.colazzo@gmail.com",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Via Muro Leccese 3",
-            "addressLocality": "Maglie",
-            "postalCode": "73024",
-            "addressRegion": "LE",
-            "addressCountry": "IT"
-          },
-          "areaServed": "IT",
-          "priceRange": "$$",
-          "knowsAbout": [
-            "Perizie grafologiche",
-            "Grafologia forense",
-            "Analisi e comparazione delle scritture",
-            "Autenticazione di firme",
-            "Perizie su documenti manoscritti",
-            "Perizie nelle arti grafiche",
-            "Analisi tecnica della stampa",
-            "Stima di macchinari e attrezzature",
-            "Consulenza CTU",
-            "Consulenza CTP"
-          ],
-          "hasCredential": [
-            {
-              "@type": "EducationalOccupationalCredential",
-              "name": "Perito Industriale",
-              "identifier": "848"
-            },
-            {
-              "@type": "EducationalOccupationalCredential",
-              "name": "Consulente Tecnico d'Ufficio (CTU)",
-              "identifier": "131"
-            }
-          ]
-        },
-        {
-          "@type": "LocalBusiness",
-          "@id": "https://www.ermannocolazzo.it/#local-business",
-          "name": "Dott. Ermanno Colazzo - Studio Peritale",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "Via Muro Leccese 3",
-            "addressLocality": "Maglie",
-            "postalCode": "73024",
-            "addressRegion": "LE",
-            "addressCountry": "IT"
-          },
-          "telephone": "+39 349 7584968",
-          "url": "https://www.ermannocolazzo.it"
-        }
-      ]
-    }
+    {"@context":"https://schema.org","@graph":[{"@type":"ProfessionalService","@id":"https://www.ermannocolazzo.it/#professional-service","name":"Dott. Ermanno Colazzo","description":"Perito Industriale specializzato in arti grafiche e grafologo forense, con esperienza pluriennale in perizie giudiziarie e stragiudiziali.","url":"https://www.ermannocolazzo.it","image":"https://www.ermannocolazzo.it/logo-emblem.png","logo":"https://www.ermannocolazzo.it/logo-emblem.png","telephone":"+39 349 7584968","email":"ermanno.colazzo@gmail.com","address":{"@type":"PostalAddress","streetAddress":"Via Muro Leccese 3","addressLocality":"Maglie","postalCode":"73024","addressRegion":"LE","addressCountry":"IT"},"areaServed":"IT","priceRange":"$$","knowsAbout":["Perizie grafologiche","Grafologia forense","Analisi e comparazione delle scritture","Autenticazione di firme","Perizie su documenti manoscritti","Perizie nelle arti grafiche","Analisi tecnica della stampa","Stima di macchinari e attrezzature","Consulenza CTU","Consulenza CTP"],"hasCredential":[{"@type":"EducationalOccupationalCredential","name":"Perito Industriale","identifier":"848"},{"@type":"EducationalOccupationalCredential","name":"Consulente Tecnico d'Ufficio (CTU)","identifier":"131"}]},{"@type":"LocalBusiness","@id":"https://www.ermannocolazzo.it/#local-business","name":"Dott. Ermanno Colazzo - Studio Peritale","address":{"@type":"PostalAddress","streetAddress":"Via Muro Leccese 3","addressLocality":"Maglie","postalCode":"73024","addressRegion":"LE","addressCountry":"IT"},"telephone":"+39 349 7584968","url":"https://www.ermannocolazzo.it"}]}
     </script>
     
     <style>
@@ -95,8 +31,26 @@
         .service { padding: 20px; background: #f9f9f9; border-left: 4px solid #667eea; border-radius: 6px; }
         .service h3 { color: #2c3e50; margin-bottom: 10px; font-size: 16px; }
         .service p { font-size: 14px; color: #666; }
-        .contact-info { background: #f0f4ff; padding: 20px; border-radius: 6px; margin-top: 20px; }
-        .contact-info p { margin: 8px 0; }
+        .contact-grid { display: grid; grid-template-columns: 1fr 2fr; gap: 30px; margin-top: 30px; }
+        @media (max-width: 768px) { .contact-grid { grid-template-columns: 1fr; } }
+        .contact-quick { display: flex; flex-direction: column; gap: 15px; }
+        .whatsapp-btn { display: block; background: #25D366; color: white; text-decoration: none; padding: 16px 24px; border-radius: 8px; text-align: center; font-weight: bold; font-size: 16px; transition: background 0.3s ease; box-shadow: 0 2px 8px rgba(37, 211, 102, 0.3); }
+        .whatsapp-btn:hover { background: #20ba57; }
+        .contact-info-box { background: #f0f4ff; padding: 20px; border-radius: 8px; border-left: 4px solid #667eea; }
+        .contact-info-box p { margin: 10px 0; font-size: 14px; }
+        .contact-info-box a { color: #667eea; text-decoration: none; font-weight: 500; }
+        .contact-info-box a:hover { text-decoration: underline; }
+        .contact-form-section { background: #f9f9f9; padding: 30px; border-radius: 8px; }
+        .contact-form-section h3 { color: #2c3e50; margin-bottom: 15px; font-size: 18px; }
+        .contact-form-section p { font-size: 14px; color: #666; margin-bottom: 20px; }
+        form { display: flex; flex-direction: column; gap: 15px; }
+        label { font-weight: 500; color: #2c3e50; font-size: 14px; }
+        input, select, textarea { padding: 12px; border: 1px solid #ddd; border-radius: 6px; font-family: inherit; font-size: 14px; }
+        input:focus, select:focus, textarea:focus { outline: none; border-color: #667eea; box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1); }
+        textarea { resize: vertical; min-height: 100px; }
+        button[type="submit"] { background: #667eea; color: white; padding: 12px 24px; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s ease; font-size: 14px; }
+        button[type="submit"]:hover { background: #5568d3; }
+        .form-note { font-size: 12px; color: #999; margin-top: 10px; }
         footer { text-align: center; padding: 30px 20px; color: #666; margin-top: 60px; border-top: 1px solid #ddd; font-size: 14px; }
     </style>
 </head>
@@ -112,54 +66,54 @@
             <h2>Chi Sono</h2>
             <p>Perito Industriale specializzato in arti grafiche e grafologo forense, con esperienza pluriennale in perizie giudiziarie e stragiudiziali.</p>
             <p>Iscritto all'<strong>Ordine dei Periti Industriali della provincia di Lecce (n. 848)</strong>, all'<strong>Albo CTU del Tribunale di Lecce (n. 131)</strong> e all'<strong>Albo Periti (n. 27)</strong>.</p>
-            <p>Svolgo perizie giudiziarie e stragiudiziali su firme, manoscritti e documenti in tutta Italia con approccio integrato grafologico-forense e competenze tecnico-industriali nelle arti grafiche.</p>
+            <p>Svolgo perizie giudiziarie e stragiudiziali su firme, manoscritti e documenti in tutta Italia con approccio integrato grafologico-forense.</p>
         </div>
         
         <div class="section">
             <h2>Servizi</h2>
             <div class="services">
-                <div class="service">
-                    <h3>📝 Perizie Grafologiche</h3>
-                    <p>Accertamenti tecnici sull'autenticità di firme, manoscritti e documenti mediante metodologia scientifica forense.</p>
-                </div>
-                <div class="service">
-                    <h3>🔗 Comparazione Scritture</h3>
-                    <p>Analisi comparativa della grafia per identificazione dell'autore e verifica di autografia o apocrifia.</p>
-                </div>
-                <div class="service">
-                    <h3>🖨️ Perizie Arti Grafiche</h3>
-                    <p>Analisi tecnica dei prodotti della stampa e accertamenti su difetti, alterazioni e contraffazioni.</p>
-                </div>
-                <div class="service">
-                    <h3>⚙️ Stima Macchinari</h3>
-                    <p>Perizie estimative e valutazioni economiche di macchine e impianti del settore grafico.</p>
-                </div>
-                <div class="service">
-                    <h3>👨‍⚖️ Consulenza CTU</h3>
-                    <p>Consulente Tecnico d'Ufficio nominato dal giudice in procedimenti civili e penali.</p>
-                </div>
-                <div class="service">
-                    <h3>👥 Consulenza CTP</h3>
-                    <p>Consulente Tecnico di Parte per supportare le parti in giudizio con valutazioni tecniche.</p>
-                </div>
+                <div class="service"><h3>📝 Perizie Grafologiche</h3><p>Accertamenti tecnici sull'autenticità di firme, manoscritti e documenti.</p></div>
+                <div class="service"><h3>🔗 Comparazione Scritture</h3><p>Analisi comparativa della grafia per identificazione dell'autore.</p></div>
+                <div class="service"><h3>🖨️ Perizie Arti Grafiche</h3><p>Analisi tecnica dei prodotti della stampa e accertamenti su difetti.</p></div>
+                <div class="service"><h3>⚙️ Stima Macchinari</h3><p>Perizie estimative di macchine e impianti del settore grafico.</p></div>
+                <div class="service"><h3>👨‍⚖️ Consulenza CTU</h3><p>Consulente Tecnico d'Ufficio nominato dal giudice.</p></div>
+                <div class="service"><h3>👥 Consulenza CTP</h3><p>Consulente Tecnico di Parte per supportare le parti in giudizio.</p></div>
             </div>
         </div>
         
         <div class="section">
             <h2>Contatti</h2>
-            <div class="contact-info">
-                <p><strong>Telefono:</strong> <a href="tel:+393497584968" style="color: #667eea; text-decoration: none;">+39 349 7584968</a></p>
-                <p><strong>Email:</strong> <a href="mailto:ermanno.colazzo@gmail.com" style="color: #667eea; text-decoration: none;">ermanno.colazzo@gmail.com</a></p>
-                <p><strong>PEC:</strong> <a href="mailto:ermanno.colazzo@legalmail.it" style="color: #667eea; text-decoration: none;">ermanno.colazzo@legalmail.it</a></p>
-                <p><strong>Indirizzo:</strong> Via Muro Leccese 3, 73024 Maglie (LE)</p>
+            <p>Scegli il metodo di contatto più rapido:</p>
+            <div class="contact-grid">
+                <div class="contact-quick">
+                    <a href="https://wa.me/393497584968?text=Ciao%20Ermanno,%20desidero%20una%20consulenza%20su..." class="whatsapp-btn">💬 WhatsApp: +39 349 7584968</a>
+                    <div class="contact-info-box">
+                        <p><strong>Telefono:</strong><br><a href="tel:+393497584968">+39 349 7584968</a></p>
+                        <p><strong>Email:</strong><br><a href="mailto:ermanno.colazzo@gmail.com">ermanno.colazzo@gmail.com</a></p>
+                        <p><strong>PEC:</strong><br><a href="mailto:ermanno.colazzo@legalmail.it">ermanno.colazzo@legalmail.it</a></p>
+                        <p><strong>Indirizzo:</strong><br>Via Muro Leccese 3, 73024 Maglie (LE)</p>
+                    </div>
+                </div>
+                <div class="contact-form-section">
+                    <h3>Richiesta Consulenza</h3>
+                    <p>Descrivi sinteticamente il caso:</p>
+                    <form action="https://formspree.io/f/xyzabc" method="POST">
+                        <div><label for="nome">Nome e cognome *</label><input type="text" id="nome" name="nome" required></div>
+                        <div><label for="email">Email *</label><input type="email" id="email" name="email" required></div>
+                        <div><label for="telefono">Telefono (opzionale)</label><input type="tel" id="telefono" name="telefono"></div>
+                        <div><label for="ambito">Ambito della richiesta *</label><select id="ambito" name="ambito" required><option value="">Seleziona</option><option value="grafologo">Perizia grafologica</option><option value="ctu">Consulenza CTU/CTP</option><option value="arti-grafiche">Perizia arti grafiche</option><option value="stima">Stima macchinari</option><option value="altro">Altro</option></select></div>
+                        <div><label for="messaggio">Descrizione breve *</label><textarea id="messaggio" name="messaggio" required></textarea></div>
+                        <div><label><input type="checkbox" name="privacy" required> Ho letto la Privacy Policy</label></div>
+                        <button type="submit">Invia richiesta</button>
+                        <div class="form-note">✓ Riceverai una conferma via email</div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-    
     <footer>
-        <p><strong>Dott. Ermanno Colazzo</strong></p>
-        <p>Perito Industriale | Grafologo | CTU e CTP</p>
-        <p style="margin-top: 15px; opacity: 0.7;">© 2026 — Tutti i diritti riservati</p>
+        <p><strong>Dott. Ermanno Colazzo</strong> - Perito Industriale | Grafologo | CTU e CTP</p>
+        <p style="opacity: 0.7;">© 2026 — Tutti i diritti riservati</p>
     </footer>
 </body>
 </html>
