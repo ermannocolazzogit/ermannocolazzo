@@ -591,13 +591,15 @@
       </div>
       <form id="contactForm" action="https://formspree.io/f/myegkowp" method="post">
         <input type="hidden" name="_subject" value="Richiesta di primo contatto dal sito ermannocolazzo.it">
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
         <div class="form-field"><label for="contactName">Nome e cognome</label><input id="contactName" name="name" type="text" autocomplete="name" required></div>
         <div class="form-field"><label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" autocomplete="email" required></div>
         <div class="form-field full"><label for="contactPhone">Telefono (opzionale)</label><input id="contactPhone" name="telefono" type="tel" autocomplete="tel"></div>
         <div class="form-field full"><label for="contactArea">Ambito della richiesta</label><select id="contactArea" name="area" required><option value="">Seleziona un ambito</option><option>Perizia grafologica o comparazione delle scritture</option><option>Consulenza CTU o CTP</option><option>Perizia nelle arti grafiche</option><option>Stima di macchinari e attrezzature</option><option>Parere tecnico verbale</option><option>Parere tecnico scritto</option><option>Altro</option></select></div>
         <div class="form-field full"><label for="contactMessage">Breve descrizione, senza dati riservati</label><textarea id="contactMessage" name="message" maxlength="1000" required></textarea></div>
-        <label class="privacy-check"><input type="checkbox" name="privacy" value="accettata" required> <span>Ho letto la <a href="/privacy-policy/">Privacy Policy</a> e autorizzo l'uso dei dati per rispondere alla richiesta.</span></label>
-        <div class="form-actions"><button class="btn solid" type="submit">Invia richiesta</button><span class="form-note">La richiesta sarà inviata in modo sicuro tramite Formspree. Non allegare documenti riservati.</span></div>
+        <p class="form-note full">I dati saranno usati dal Dott. Ermanno Colazzo per rispondere alla richiesta e gestire le eventuali attività precontrattuali. L’invio avviene tramite Formspree, fornitore tecnico del servizio. Dettagli su dati, conservazione, destinatari, trasferimenti e diritti nella <a href="/privacy-policy/">Privacy Policy</a>.</p>
+        <label class="privacy-check"><input type="checkbox" name="privacy_acknowledged" value="presa_visione" required> <span>Dichiaro di aver letto la <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
+        <div class="form-actions"><button class="btn solid" type="submit">Invia richiesta</button><span class="form-note">Non allegare o inserire dati particolari, giudiziari o documenti riservati.</span></div>
         <div id="formStatus" class="form-status" aria-live="polite"></div>
       </form>
     </div>
@@ -652,6 +654,27 @@
   function cookieConsent(v){try{document.cookie='cc_consent='+v+';path=/;max-age=15552000;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.remove('show');if(v==='accept')loadMap();}
   function manageConsent(){try{document.cookie='cc_consent=;path=/;max-age=0;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}
   (function(){var val=null;try{var m=document.cookie.match(/(?:^|;)\s*cc_consent=([^;]+)/);if(m)val=m[1];}catch(e){}if(!val){var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}else if(val==='accept'){loadMap();}})();
+  (function(){
+    var form=document.getElementById('contactForm');
+    var status=document.getElementById('formStatus');
+    if(!form)return;
+    form.addEventListener('submit',async function(event){
+      event.preventDefault();
+      var button=form.querySelector('button[type="submit"]');
+      status.textContent='Invio in corso…';
+      status.className='form-status show';
+      if(button)button.disabled=true;
+      try{
+        var response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
+        if(!response.ok)throw new Error('submit_failed');
+        window.location.assign('/grazie/');
+      }catch(error){
+        status.textContent='Invio non riuscito. Riprova tra poco oppure contatta lo studio via email o telefono.';
+        status.className='form-status show error';
+        if(button)button.disabled=false;
+      }
+    });
+  })();
 </script>
 
 
