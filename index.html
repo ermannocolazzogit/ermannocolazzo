@@ -132,7 +132,8 @@
   .wordmark .l1 .d{color:#a2a9b3;font-weight:700;font-size:.66em}
   .wordmark .l1 .e{color:var(--blue)}
   .wordmark .l1 .c{color:#8a929d}
-  .wordmark .l2{font-family:'Nunito',sans-serif;font-size:clamp(.6rem,1.7vw,.78rem);font-weight:700;color:#3d4652;letter-spacing:.2px;white-space:nowrap}
+  .wordmark .l2{font-family:'Nunito',sans-serif;font-size:clamp(.6rem,1.7vw,.78rem);font-weight:700;color:#3d4652;letter-spacing:.2px;white-space:normal;line-height:1.2;max-width:250px}
+  .wordmark .role-break{display:block}
   nav.menu ul{list-style:none;display:flex;gap:clamp(18px,3vw,36px)}
   nav.menu a{font-family:'Nunito',sans-serif;font-size:.8rem;letter-spacing:1.4px;text-transform:uppercase;color:var(--blue);position:relative;padding:6px 0}
   nav.menu a::after{content:"";position:absolute;left:0;bottom:0;height:2px;width:0;background:var(--accent);transition:width .3s}
@@ -209,6 +210,16 @@
   .source-note{max-width:780px;margin:20px auto 0;color:#9fb5cf;font-family:'Nunito',sans-serif;font-size:.78rem;line-height:1.65}
   .source-note a{color:#fff;border-bottom:1px solid #ff9db4}
   .source-note a:hover{color:#ff9db4}
+
+  /* Ambiti principali */
+  .macro-areas{background:#fff;border-bottom:1px solid var(--line)}
+  .macro-areas .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border-left:1px solid var(--line);border-right:1px solid var(--line)}
+  .macro-area{background:#fff;padding:clamp(26px,3.5vw,40px);display:flex;flex-direction:column;align-items:flex-start}
+  .macro-area .label{font-family:'Nunito',sans-serif;font-size:.76rem;letter-spacing:1.7px;text-transform:uppercase;color:var(--accent);font-weight:600;margin-bottom:10px}
+  .macro-area h2{font-size:clamp(1.3rem,2.8vw,1.65rem);line-height:1.25;margin-bottom:12px}
+  .macro-area p{color:var(--body);font-size:var(--fs-body);line-height:var(--lh);margin-bottom:18px}
+  .macro-area a{margin-top:auto;color:var(--blue);font-family:'Nunito',sans-serif;font-size:.86rem;font-weight:700;text-decoration:none;border-bottom:1px solid rgba(0,60,129,.28);padding-bottom:2px}
+  .macro-area a:hover{border-color:var(--blue)}
 
   /* Servizi */
   .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
@@ -313,6 +324,7 @@
     .process{grid-template-columns:1fr 1fr}
   }
   @media(max-width:760px){
+    .macro-areas .grid{grid-template-columns:1fr}
     .services{grid-template-columns:1fr 1fr}
     .pillars .grid{grid-template-columns:1fr 1fr}
     .pillars .p:nth-child(2){border-right:0}
@@ -378,7 +390,7 @@
       <img class="logo-emblem" src="/logo-emblem.png?v=20260805-13" alt="Logo Ermanno Colazzo" width="167" height="140">
       <span class="wordmark">
         <span class="l1"><span class="d">dott. </span><span class="e">Ermanno </span><span class="c">Colazzo</span></span>
-        <span class="l2">Perito Industriale in Arti Grafiche · Grafologo Forense</span>
+        <span class="l2">Perito Industriale in Arti Grafiche<span class="role-break">Grafologo Forense</span></span>
       </span>
     </a>
     <nav class="menu">
@@ -409,8 +421,28 @@
       <p class="lead">Consulenze tecniche giudiziarie e stragiudiziali nelle discipline della grafologia forense e delle arti grafiche: analisi e comparazione di firme e scritture, esame tecnico dei documenti, perizie su carta, prodotti della stampa, imballaggi, macchinari e attrezzature del settore grafico. Incarichi in tutta Italia.</p>
       <div class="cta">
         <a href="#contatti" class="btn solid">Contatta lo studio</a>
-        <a href="#servizi" class="btn">Ambiti di perizia</a>
+        <a href="#iscrizioni" class="btn">Qualifiche e iscrizioni</a>
       </div>
+    </div>
+  </div>
+</section>
+
+<!-- AMBITI PRINCIPALI -->
+<section class="macro-areas" id="ambiti-principali" aria-label="Ambiti principali di consulenza">
+  <div class="container">
+    <div class="grid">
+      <article class="macro-area">
+        <div class="label">Firme, scritture e documenti</div>
+        <h2>Grafologia forense e analisi delle scritture</h2>
+        <p>Esame e comparazione di firme, sigle, manoscritti e documenti, per la verifica dell’autografia o dell’apocrifia e per l’assistenza tecnica in ambito giudiziale e stragiudiziale.</p>
+        <a href="/perizie-grafologiche/">Esamina questo ambito</a>
+      </article>
+      <article class="macro-area">
+        <div class="label">Materiali, prodotti e processi</div>
+        <h2>Arti grafiche, carta, stampa e imballaggi</h2>
+        <p>Accertamenti tecnici su carta, prodotti stampati, imballaggi e processi produttivi, nonché stime e valutazioni di macchinari e attrezzature del settore grafico.</p>
+        <a href="/perizie-arti-grafiche/">Esamina questo ambito</a>
+      </article>
     </div>
   </div>
 </section>
@@ -440,7 +472,7 @@
       <div class="d"><div class="num">n. 27</div><div class="txt">Albo Periti del Tribunale Ordinario di Lecce · Categorie carta-stampa e grafologia forense</div></div>
     </div>
     <div class="verification-links">
-      <a class="btn solid" href="https://www.albounicoperind.it/Ricerca_Periti_Industriali.aspx" target="_blank" rel="noopener">Consulta l’Albo Unico</a>
+      <a class="btn solid" href="https://cnpi.eu/albounico/" target="_blank" rel="noopener">Consulta l’Albo Unico</a>
       <a class="btn" href="https://alboctuelenchi.giustizia.it/gestione-albi/ricercaIscritti/load" target="_blank" rel="noopener">Consulta gli Albi giudiziari</a>
     </div>
     <p class="source-note">Verifica effettuata il 30 luglio 2026 consultando le banche dati ufficiali. Il confronto riguarda i professionisti presenti nell’Albo Unico nazionale nella specializzazione Arti Grafiche.</p>
@@ -604,7 +636,12 @@
         <div class="form-field"><label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" autocomplete="email" required></div>
         <div class="form-field full"><label for="contactPhone">Telefono (opzionale)</label><input id="contactPhone" name="telefono" type="tel" autocomplete="tel"></div>
         <div class="form-field full"><label for="contactArea">Ambito della richiesta</label><select id="contactArea" name="area" required><option value="">Seleziona un ambito</option><option>Perizia grafologica o comparazione delle scritture</option><option>Consulenza CTU o CTP</option><option>Perizia nelle arti grafiche</option><option>Stima di macchinari e attrezzature</option><option>Parere tecnico verbale</option><option>Parere tecnico scritto</option><option>Altro</option></select></div>
+        <div class="form-field"><label for="contactAssignment">Tipo di valutazione o incarico (se noto)</label><select id="contactAssignment" name="tipo_incarico"><option value="">Seleziona</option><option>Consulenza tecnica di parte (CTP)</option><option>Accertamento o perizia stragiudiziale</option><option>Parere tecnico preliminare</option><option>Da definire</option></select></div>
+        <div class="form-field"><label for="contactStage">Stato attuale della pratica o del procedimento (se noto)</label><select id="contactStage" name="stato_caso"><option value="">Seleziona</option><option>Fase preliminare di valutazione</option><option>Contestazione già formulata</option><option>Procedimento giudiziario in corso</option><option>CTU già nominato</option><option>Operazioni peritali già iniziate</option><option>Altra fase o stato da definire</option></select></div>
+        <div class="form-field"><label for="contactDeadline">Sono presenti scadenze? (se noto)</label><select id="contactDeadline" name="scadenze"><option value="">Seleziona</option><option>No</option><option>Sì, entro 7 giorni</option><option>Sì, entro 30 giorni</option><option>Sì, oltre 30 giorni</option><option>Da verificare</option></select></div>
+        <div class="form-field"><label for="contactMaterial">Documenti o materiali disponibili (se noto)</label><select id="contactMaterial" name="materiale_disponibile"><option value="">Seleziona</option><option>Originali o campioni disponibili</option><option>Soltanto copie o riproduzioni</option><option>Documentazione tecnica disponibile</option><option>Più tipologie di materiale disponibili</option><option>Da verificare</option></select></div>
         <div class="form-field full"><label for="contactMessage">Breve descrizione, senza dati riservati</label><textarea id="contactMessage" name="message" maxlength="1000" required></textarea></div>
+        <p class="form-note full">Non indicare i nominativi delle controparti nel modulo. Potranno essere richiesti successivamente per le necessarie verifiche di incompatibilità.</p>
         <p class="form-note full">I dati saranno usati dal Dott. Ermanno Colazzo per rispondere alla richiesta e gestire le eventuali attività precontrattuali. L’invio avviene tramite Formspree, fornitore tecnico del servizio. Dettagli su dati, conservazione, destinatari, trasferimenti e diritti nella <a href="/privacy-policy/">Privacy Policy</a>.</p>
         <label class="privacy-check"><input type="checkbox" name="privacy_acknowledged" value="presa_visione" required> <span>Dichiaro di aver letto la <a href="/privacy-policy/">Privacy Policy</a>.</span></label>
         <div class="form-actions"><button class="btn solid" type="submit">Invia richiesta</button><span class="form-note">Non allegare o inserire dati particolari, giudiziari o documenti riservati.</span></div>
