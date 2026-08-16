@@ -13,12 +13,23 @@
   <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,500;1,400&amp;family=Nunito:wght@300;400;500;600;700;800&amp;display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/original.css?v=20260805-2">
   <link rel="stylesheet" href="/styles.css?v=20260805-2">
+  <style>
+    body{font-family:'EB Garamond',Georgia,serif}
+    h1,h2,h3,.btn,.kicker,.breadcrumbs,nav.menu,.services-back{font-family:'Nunito',Arial,sans-serif}
+    .wordmark{font-family:'Nunito',sans-serif;line-height:1.12}
+    .wordmark .l1{font-family:'Nunito',sans-serif;font-size:clamp(.98rem,3vw,1.4rem);font-weight:800;letter-spacing:.2px;white-space:nowrap}
+    .wordmark .l1 .d{color:#a2a9b3;font-weight:700;font-size:.66em}
+    .wordmark .l1 .e{color:#003c81}
+    .wordmark .l1 .c{color:#8a929d}
+    .wordmark .l2{font-family:'Nunito',sans-serif;font-size:clamp(.6rem,1.7vw,.78rem);font-weight:700;color:#3d4652;letter-spacing:.2px;white-space:normal;line-height:1.2;max-width:250px;text-transform:none}
+    .wordmark .role-break{display:block}
+  </style>
 
 <script type="application/ld+json">
 {"@context":"https://schema.org","@type":"Service","@id":"https://www.ermannocolazzo.it/perizie-arti-grafiche/#service","name":"Perizie tecnico-industriali nelle arti grafiche","description":"Analisi tecnica dei prodotti della stampa tipografica, offset, digitale, flessografica, serigrafica e dei materiali cartotecnici, documenti e prodotti grafici.","serviceType":"Perizie arti grafiche","provider":{"@id":"https://www.ermannocolazzo.it/#studio"},"areaServed":{"@type":"Country","name":"Italia"},"url":"https://www.ermannocolazzo.it/perizie-arti-grafiche/","availableChannel":{"@type":"ServiceChannel","serviceUrl":"https://www.ermannocolazzo.it/#contatti"}}
 </script>
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ermannocolazzo.it/"},{"@type":"ListItem","position":2,"name":"Servizi","item":"https://www.ermannocolazzo.it/#servizi"},{"@type":"ListItem","position":3,"name":"Perizie arti grafiche","item":"https://www.ermannocolazzo.it/perizie-arti-grafiche/"}]}
+  {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://www.ermannocolazzo.it/"},{"@type":"ListItem","position":2,"name":"Ambiti di perizia","item":"https://www.ermannocolazzo.it/#ambiti-principali"},{"@type":"ListItem","position":3,"name":"Perizie nelle arti grafiche","item":"https://www.ermannocolazzo.it/perizie-arti-grafiche/"}]}
 </script>
 </head>
 <body>
@@ -26,7 +37,7 @@
     <div class="container nav">
       <a href="/#home" class="brand">
         <img class="logo-emblem" src="/logo-emblem.png?v=20260805-13" alt="Logo Ermanno Colazzo" width="167" height="140">
-        <span class="wordmark"><span class="l1"><span class="d">dott. </span><span class="e">Ermanno </span><span class="c">Colazzo</span></span><span class="l2">perito industriale in arti grafiche</span></span>
+        <span class="wordmark"><span class="l1"><span class="d">dott. </span><span class="e">Ermanno </span><span class="c">Colazzo</span></span><span class="l2">Perito Industriale in Arti Grafiche<span class="role-break">Grafologo Forense</span></span></span>
       </a>
       <nav class="menu" aria-label="Navigazione principale"><ul id="navmenu"><li><a href="/#home" onclick="closeMenu()">Home</a></li><li><a href="/#chi-sono" onclick="closeMenu()">Chi sono</a></li><li><a href="/#servizi" onclick="closeMenu()">Servizi</a></li><li><a href="/#faq" onclick="closeMenu()">FAQ</a></li><li><a href="/#contatti" onclick="closeMenu()">Contatti</a></li></ul></nav>
       <button class="menu-btn" type="button" aria-label="Menu" onclick="document.getElementById('navmenu').classList.toggle('open')">☰</button>
@@ -34,21 +45,21 @@
   </header>
 
   <main>
-    <section class="subpage-hero">
+    <section class="subpage-hero" id="ambito-arti-grafiche">
       <div class="container">
-        <nav class="breadcrumbs" aria-label="Percorso"><a href="/#home">Home</a><span aria-hidden="true">›</span><a href="/#servizi">Servizi</a><span aria-hidden="true">›</span><span aria-current="page">Perizie nelle arti grafiche</span></nav>
+        <nav class="breadcrumbs" aria-label="Percorso"><a href="/#home">Home</a><span aria-hidden="true">›</span><a href="/#ambiti-principali">Ambiti di perizia</a><span aria-hidden="true">›</span><span aria-current="page">Perizie nelle arti grafiche</span></nav>
         <span class="kicker">Carta · stampa · incarichi in tutta Italia</span>
-        <h1>Perizie tecnico-industriali nelle arti grafiche</h1>
+        <h1>Arti grafiche, carta, stampa e imballaggi</h1>
         <div class="divider"></div>
-        <p class="lead">Accertamenti giudiziari e stragiudiziali in tutta Italia su prodotti stampati, materiali, lavorazioni, processi produttivi, difetti, non conformità e contestazioni del settore grafico.</p>
-        <div class="cta"><a class="btn solid" href="/#contatti">Richiedi un primo contatto</a><a class="btn" href="#accertamento">Come si svolge l'accertamento</a></div>
+        <p class="lead">Accertamenti tecnico-industriali, giudiziari e stragiudiziali, in tutta Italia su carta, prodotti stampati, imballaggi, materiali, lavorazioni, processi produttivi, difetti e non conformità del settore grafico.</p>
+        <div class="cta"><a class="btn solid" href="#conferimento">Informazioni per il conferimento dell’incarico</a><a class="btn solid" href="#accertamento">Come si svolge l'accertamento</a></div>
       </div>
     </section>
 
     <section>
       <div class="container content-grid">
         <article>
-          <span class="kicker">Ambiti di intervento</span>
+          <span class="kicker">Principali oggetti di accertamento</span>
           <h2>Prodotti e lavorazioni esaminabili</h2>
           <p>La consulenza può riguardare prodotti realizzati con processi tipografici, offset, digitali, flessografici, serigrafici, tampografici, calcografici e rotocalco, oltre alle lavorazioni di finitura e trasformazione.</p>
           <p>L'esame viene definito in base alla contestazione, alle specifiche concordate e ai campioni effettivamente disponibili.</p>
@@ -56,13 +67,14 @@
             <li>Etichette, imballaggi, cataloghi, libri e stampati commerciali</li>
             <li>Difetti di colore, registro, supporto, taglio, piega e finitura</li>
             <li>Corrispondenza tra file, prova approvata e prodotto consegnato</li>
-            <li>Possibili alterazioni, riproduzioni e contraffazioni</li>
+            <li>Non conformità della fornitura e individuazione delle possibili cause tecniche</li>
+            <li>Valutazione tecnica degli effetti del difetto e degli eventuali interventi correttivi</li>
           </ul>
         </article>
         <aside class="evidence-box">
           <span class="kicker">Documentazione utile</span>
           <h2>Cosa raccogliere</h2>
-          <p>Sono utili il prodotto contestato e gli eventuali campioni conformi, il preventivo o contratto, le specifiche tecniche, i file di lavorazione, le prove approvate, le comunicazioni tra le parti e i dati relativi alla produzione.</p>
+          <p>Sono utili il prodotto contestato e gli eventuali campioni conformi, il preventivo o contratto, le specifiche tecniche, i file di lavorazione, le prove approvate, le comunicazioni tra le parti e i dati relativi alla produzione. In presenza di una controversia sono inoltre rilevanti la fase in cui si trova il caso e le eventuali scadenze.</p>
           <p>Quando pertinente, il sopralluogo consente di esaminare impianti, flusso produttivo, materiali e condizioni operative.</p>
         </aside>
       </div>
@@ -73,9 +85,9 @@
         <div class="proof-copy">
           <span class="kicker">Iscrizioni professionali</span>
           <h2>Categoria giudiziaria “Carta e stampa”</h2>
-          <p>Il Dott. Ermanno Colazzo è iscritto all’Ordine dei Periti Industriali nella specializzazione Arti Grafiche e agli Albi CTU e Periti del Tribunale Ordinario di Lecce sia nell’ambito della grafologia forense sia nella categoria “Carta e stampa”, con le relative specializzazioni. La verifica comparativa qui richiamata riguarda esclusivamente “Carta e stampa”: dalla consultazione dei dati pubblici effettuata il 30 luglio 2026, tra gli otto Periti Industriali iscritti in Italia nella specializzazione Arti Grafiche, il Dott. Ermanno Colazzo risulta il solo presente negli Albi giudiziari per questa categoria.</p>
+          <p>Il Dott. Ermanno Colazzo è iscritto all’Ordine dei Periti Industriali nella specializzazione Arti Grafiche e agli Albi CTU e Periti del Tribunale Ordinario di Lecce sia nell’ambito della grafologia forense sia nella categoria “Carta e stampa”, con le relative specializzazioni. La verifica comparativa qui richiamata riguarda esclusivamente “Carta e stampa”: dalla consultazione dei dati pubblici effettuata il 30 luglio 2026, tra gli otto Periti Industriali iscritti in Italia nella specializzazione Arti Grafiche, il Dott. Ermanno Colazzo risulta <strong>il solo presente negli Albi giudiziari per questa categoria</strong>.</p>
           <div class="proof-links">
-            <a href="https://www.albounicoperind.it/Ricerca_Periti_Industriali.aspx" target="_blank" rel="noopener">Consulta l’Albo Unico</a>
+            <a href="https://cnpi.eu/albounico/" target="_blank" rel="noopener">Consulta l’Albo Unico</a>
             <a href="https://alboctuelenchi.giustizia.it/gestione-albi/ricercaIscritti/load" target="_blank" rel="noopener">Consulta gli Albi giudiziari</a>
           </div>
           <p class="proof-note">Verifica effettuata il 30 luglio 2026. Il confronto riguarda i professionisti presenti nell’Albo Unico nazionale nella specializzazione Arti Grafiche.</p>
@@ -97,6 +109,30 @@
           <article class="method-item"><h3>Esame tecnico</h3><p>Valutazione dei processi, dei materiali e delle lavorazioni pertinenti, con eventuale sopralluogo.</p></article>
           <article class="method-item"><h3>Conclusioni</h3><p>Esposizione delle conformità, delle anomalie osservate e dei limiti dell'accertamento.</p></article>
         </div>
+        <div class="services-back"><a href="#ambito-arti-grafiche">↑ Torna all’ambito Arti grafiche, carta, stampa e imballaggi</a></div>
+      </div>
+    </section>
+
+    <section class="alt" id="conferimento">
+      <div class="container content-grid">
+        <article>
+          <span class="kicker">Conferimento dell’incarico</span>
+          <h2>Informazioni necessarie per valutare l’incarico</h2>
+          <p>Per verificare la pertinenza dell’accertamento, la disponibilità e l’assenza di cause di incompatibilità è utile indicare, nel primo contatto:</p>
+          <ul class="evidence-list">
+            <li>se si tratta di consulenza tecnica di parte, accertamento stragiudiziale o altro incarico tecnico;</li>
+            <li>l’oggetto della contestazione e i soggetti coinvolti;</li>
+            <li>la fase in cui si trova il caso e le eventuali scadenze;</li>
+            <li>i prodotti, i campioni e la documentazione tecnica disponibili.</li>
+          </ul>
+        </article>
+        <aside class="evidence-box">
+          <span class="kicker">Primo contatto</span>
+          <h2>Descrizione preliminare del caso</h2>
+          <p>È sufficiente una sintesi priva di dati riservati. L’eventuale trasmissione di atti, documenti e campioni viene concordata successivamente, con modalità adeguate alla natura del materiale.</p>
+          <a class="btn solid" href="/#contatti">Vai al modulo di contatto</a>
+        </aside>
+        <div class="services-back" style="grid-column:1/-1"><a href="#ambito-arti-grafiche">↑ Torna all’ambito Arti grafiche, carta, stampa e imballaggi</a></div>
       </div>
     </section>
 
@@ -109,7 +145,7 @@
           <a class="related-card" href="/ctu-ctp/"><span class="kicker">Procedimenti</span><h3>CTU e CTP</h3><p>Ruoli e attività della consulenza tecnica.</p></a>
           <a class="related-card" href="/stima-macchinari/"><span class="kicker">Valutazioni</span><h3>Stima di macchinari</h3><p>Macchine e attrezzature del settore grafico.</p></a>
         </div>
-        <div class="services-back"><a href="/#servizi">← Torna a tutti gli ambiti di perizia</a></div>
+        <div class="services-back"><a href="/#ambiti-principali">← Torna ai due ambiti di perizia</a></div>
       </div>
     </section>
 
