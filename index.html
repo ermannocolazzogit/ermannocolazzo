@@ -222,7 +222,13 @@
   .macro-area a:hover{border-color:var(--blue)}
 
   /* Servizi */
-  .services{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+  .service-groups{display:grid;gap:34px}
+  .service-group{border-top:1px solid var(--line);padding-top:24px}
+  .service-group:first-child{border-top:0;padding-top:0}
+  .service-group-head{display:flex;align-items:flex-start;justify-content:space-between;gap:28px;margin-bottom:18px}
+  .service-group-head h3{font-size:clamp(1.18rem,2vw,1.5rem);font-weight:700;margin:0}
+  .service-group-head p{max-width:620px;margin:0;color:var(--muted);font-size:.98rem}
+  .services{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
   .service{background:#fff;padding:clamp(32px,4vw,46px) clamp(24px,3vw,36px);transition:transform .35s,box-shadow .35s;position:relative}
   .service::before{content:"";position:absolute;top:0;left:0;right:0;height:3px;background:var(--accent);transform:scaleX(0);transform-origin:left;transition:transform .35s}
   .service:hover{transform:translateY(-3px);box-shadow:0 22px 44px -30px rgba(0,42,92,.4);z-index:2}
@@ -326,6 +332,8 @@
   @media(max-width:760px){
     .macro-areas .grid{grid-template-columns:1fr}
     .services{grid-template-columns:1fr 1fr}
+    .service-group-head{display:block}
+    .service-group-head p{margin-top:8px}
     .pillars .grid{grid-template-columns:1fr 1fr}
     .pillars .p:nth-child(2){border-right:0}
     .pillars .p:nth-child(1),.pillars .p:nth-child(2){border-bottom:1px solid var(--line-blue)}
@@ -517,19 +525,35 @@
 <section id="servizi" class="alt">
   <div class="container">
     <div class="section-head reveal">
-      <span class="kicker">Servizi</span>
-      <h2>Ambiti di perizia e consulenza</h2>
+      <span class="kicker">Approfondimenti tecnici</span>
+      <h2>Attività comprese nei due ambiti di perizia</h2>
       <div class="divider"></div>
+      <p>Le attività sono ordinate secondo i due ambiti professionali principali. La consulenza CTU e CTP e i pareri tecnici possono riguardare entrambi.</p>
     </div>
-    <div class="services reveal">
-      <div class="service"><h3>Perizie grafologiche</h3><p>Accertamenti tecnici sull'autenticità di firme, manoscritti, sigle e documenti manoscritti mediante metodologia grafologico-forense. Analisi eseguite su originali e riproduzioni nell'ambito di procedimenti civili, penali e consulenze stragiudiziali.</p><a class="service-link" href="/perizie-grafologiche/">Approfondisci</a></div>
-      <div class="service"><h3>Grafologo forense per Lecce e provincia</h3><p>Perizie su firme e manoscritti, comparazione delle scritture e assistenza tecnica di parte per incarichi a Lecce e provincia. Lo studio ha sede a Maglie e riceve su appuntamento.</p><a class="service-link" href="/grafologo-lecce/">Modalità operative per Lecce</a></div>
-      <div class="service"><h3>Analisi e comparazione delle scritture</h3><p>Analisi comparativa della grafia finalizzata all'identificazione dell'autore della scrittura e alla verifica dell'autografia o apocrifia di firme, sigle e manoscritti secondo criteri tecnico-scientifici.</p><a class="service-link" href="/comparazione-scritture/">Approfondisci</a></div>
-      <div class="service"><h3>Analisi tecnico-forense del documento</h3><p>La consulenza integra competenze grafologico-forensi e tecnico-industriali nelle arti grafiche, consentendo di esaminare il documento nella sua interezza: grafia, supporto cartaceo, inchiostri, tecniche di stampa, processi produttivi e possibili alterazioni o falsificazioni.</p><a class="service-link" href="/perizie-grafologiche/">Approfondisci</a></div>
-      <div class="service"><h3>Consulenze tecniche CTU e CTP</h3><p>Attività di Consulente Tecnico d'Ufficio e Consulente Tecnico di Parte nei procedimenti civili e penali, con assistenza tecnica ad Autorità Giudiziaria, avvocati, aziende e privati.</p><a class="service-link" href="/ctu-ctp/">Approfondisci</a></div>
-      <div class="service"><h3>Perizie tecnico-industriali nelle arti grafiche su stampe, documenti e prodotti grafici</h3><p>Analisi tecnica dei prodotti della stampa tipografica, offset, digitale, flessografica, serigrafica, tampografica, calcografica e rotocalco per accertare difetti di produzione, alterazioni, contraffazioni, contestazioni qualitative e conformità dei processi di stampa.</p><a class="service-link" href="/perizie-arti-grafiche/">Approfondisci</a></div>
-      <div class="service"><h3>Stima di macchinari e attrezzature per la stampa</h3><p>Perizie estimative e valutazioni economiche di macchine, impianti e attrezzature del settore grafico e tipografico nell'ambito di contenziosi, procedure giudiziarie, successioni, fallimenti, liquidazioni e compravendite.</p><a class="service-link" href="/stima-macchinari/">Approfondisci</a></div>
-      <div class="service"><h3>Pareri tecnici verbali e scritti</h3><p>Valutazioni preliminari su quesiti tecnici, documenti, scritture, prodotti della stampa, macchinari e attrezzature, rese verbalmente oppure in forma scritta in base alle esigenze e agli elementi disponibili.</p><a class="service-link" href="#contatti">Richiedi un primo contatto</a></div>
+    <div class="service-groups reveal">
+      <section class="service-group" aria-labelledby="gruppo-grafologia">
+        <div class="service-group-head"><h3 id="gruppo-grafologia">Grafologia forense e scritture</h3><p>Firme, manoscritti, scritture comparative e accertamenti sul documento.</p></div>
+        <div class="services">
+          <div class="service"><h3>Perizie grafologiche</h3><p>Accertamenti tecnici sull'autenticità di firme, manoscritti, sigle e documenti manoscritti mediante metodologia grafologico-forense. Analisi eseguite su originali e riproduzioni nell'ambito di procedimenti civili, penali e consulenze stragiudiziali.</p><a class="service-link" href="/perizie-grafologiche/">Approfondisci</a></div>
+          <div class="service"><h3>Analisi e comparazione delle scritture</h3><p>Analisi comparativa della grafia finalizzata all'identificazione dell'autore della scrittura e alla verifica dell'autografia o apocrifia di firme, sigle e manoscritti secondo criteri tecnico-scientifici.</p><a class="service-link" href="/comparazione-scritture/">Approfondisci</a></div>
+          <div class="service"><h3>Analisi tecnico-forense del documento</h3><p>La consulenza integra competenze grafologico-forensi e tecnico-industriali nelle arti grafiche, consentendo di esaminare il documento nella sua interezza: grafia, supporto cartaceo, inchiostri, tecniche di stampa, processi produttivi e possibili alterazioni o falsificazioni.</p><a class="service-link" href="/perizie-grafologiche/">Approfondisci</a></div>
+          <div class="service"><h3>Grafologia forense in tutta Italia</h3><p>Perizie su firme e manoscritti, comparazione delle scritture e attività di CTU e CTP per incarichi in tutta Italia. Lo studio ha sede a Maglie e riceve su appuntamento; il primo inquadramento può essere svolto anche a distanza.</p><a class="service-link" href="/grafologo-lecce/">Sede e modalità operative</a></div>
+        </div>
+      </section>
+      <section class="service-group" aria-labelledby="gruppo-stampa">
+        <div class="service-group-head"><h3 id="gruppo-stampa">Arti grafiche, carta, stampa e macchinari</h3><p>Prodotti grafici, processi di stampa, difetti, non conformità e valutazioni di attrezzature.</p></div>
+        <div class="services">
+          <div class="service"><h3>Perizie tecnico-industriali nelle arti grafiche su stampe, documenti e prodotti grafici</h3><p>Analisi tecnica dei prodotti della stampa tipografica, offset, digitale, flessografica, serigrafica, tampografica, calcografica e rotocalco per accertare difetti di produzione, alterazioni, contraffazioni, contestazioni qualitative e conformità dei processi di stampa.</p><a class="service-link" href="/perizie-arti-grafiche/">Approfondisci</a></div>
+          <div class="service"><h3>Stima di macchinari e attrezzature per la stampa</h3><p>Perizie estimative e valutazioni economiche di macchine, impianti e attrezzature del settore grafico e tipografico nell'ambito di contenziosi, procedure giudiziarie, successioni, fallimenti, liquidazioni e compravendite.</p><a class="service-link" href="/stima-macchinari/">Approfondisci</a></div>
+        </div>
+      </section>
+      <section class="service-group" aria-labelledby="gruppo-trasversale">
+        <div class="service-group-head"><h3 id="gruppo-trasversale">Incarichi e pareri tecnici</h3><p>Attività trasversali applicabili, secondo il quesito, a entrambi gli ambiti professionali.</p></div>
+        <div class="services">
+          <div class="service"><h3>Consulenze tecniche CTU e CTP</h3><p>Attività di Consulente Tecnico d'Ufficio e Consulente Tecnico di Parte nei procedimenti civili e penali, con assistenza tecnica ad Autorità Giudiziaria, avvocati, aziende e privati.</p><a class="service-link" href="/ctu-ctp/">Approfondisci</a></div>
+          <div class="service"><h3>Pareri tecnici verbali e scritti</h3><p>Valutazioni preliminari su quesiti tecnici, documenti, scritture, prodotti della stampa, macchinari e attrezzature, rese verbalmente oppure in forma scritta in base alle esigenze e agli elementi disponibili.</p><a class="service-link" href="#contatti">Richiedi un primo contatto</a></div>
+        </div>
+      </section>
     </div>
   </div>
 </section>
