@@ -1,7 +1,9 @@
 User-agent: *
 Allow: /
+Disallow: /cdn-cgi/
 
 User-agent: OAI-SearchBot
 Allow: /
+Disallow: /cdn-cgi/
 
 Sitemap: https://www.ermannocolazzo.it/sitemap.xml
