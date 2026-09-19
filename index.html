@@ -656,6 +656,7 @@
       </div>
       <form id="contactForm" action="https://formspree.io/f/myegkowp" method="post">
         <input type="hidden" name="_subject" value="Richiesta di primo contatto dal sito ermannocolazzo.it">
+        <input type="hidden" name="_next" value="https://www.ermannocolazzo.it/grazie/">
         <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px">
         <div class="form-field"><label for="contactName">Nome e cognome</label><input id="contactName" name="name" type="text" autocomplete="name" required></div>
         <div class="form-field"><label for="contactEmail">Email</label><input id="contactEmail" name="email" type="email" autocomplete="email" required></div>
@@ -725,27 +726,6 @@
   function cookieConsent(v){try{document.cookie='cc_consent='+v+';path=/;max-age=15552000;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.remove('show');if(v==='accept')loadMap();}
   function manageConsent(){try{document.cookie='cc_consent=;path=/;max-age=0;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}
   (function(){var val=null;try{var m=document.cookie.match(/(?:^|;)\s*cc_consent=([^;]+)/);if(m)val=m[1];}catch(e){}if(!val){var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}else if(val==='accept'){loadMap();}})();
-  (function(){
-    var form=document.getElementById('contactForm');
-    var status=document.getElementById('formStatus');
-    if(!form)return;
-    form.addEventListener('submit',async function(event){
-      event.preventDefault();
-      var button=form.querySelector('button[type="submit"]');
-      status.textContent='Invio in corso…';
-      status.className='form-status show';
-      if(button)button.disabled=true;
-      try{
-        var response=await fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}});
-        if(!response.ok)throw new Error('submit_failed');
-        window.location.assign('/grazie/');
-      }catch(error){
-        status.textContent='Invio non riuscito. Riprova tra poco oppure contatta lo studio via email o telefono.';
-        status.className='form-status show error';
-        if(button)button.disabled=false;
-      }
-    });
-  })();
 </script>
 
 
