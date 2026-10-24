@@ -11,7 +11,7 @@ Il repository era pulito sul commit `dd79214`, ma non conteneva `README.md`, `CO
 1. Il pulsante del menu mobile apriva e chiudeva correttamente la navigazione, ma non esponeva lo stato ai lettori di schermo.
 2. La data `lastmod` della pagina FAQ non rifletteva la modifica pubblicata il 3 ottobre 2026.
 3. Mancava la documentazione tecnica prescritta dal progetto.
-4. I dati Search Console e Core Web Vitals non erano accessibili perché GSC Wizard non aveva un piano attivo; PageSpeed Insights ha risposto con quota esaurita.
+4. GSC Wizard non era utilizzabile senza piano attivo, ma gli stessi dati essenziali sono stati verificati gratuitamente nell'interfaccia Google Search Console ed esportati in Excel. PageSpeed Insights ha risposto con quota esaurita.
 
 ### Decisione
 
@@ -29,6 +29,9 @@ Il rollback completo è il commit `dd792144dac50ae6196394bc241909765c0b372a`. In
 
 ### Attività rimaste
 
-- Riattivare GSC Wizard e completare il confronto degli ultimi 28 giorni, decadimento, cannibalizzazione, opportunità e CWV di campo.
+- Monitorare per almeno altri 28 giorni `/perizie-arti-grafiche/`, che nel confronto GSC più recente ha perso 3 clic e circa 10 posizioni medie su volumi ridotti; evitare riscritture basate su un solo campione.
+- In Google Search Console mantenere soltanto la sitemap canonica HTTPS `www` e rimuovere le due submission duplicate solo dopo conferma esplicita, trattandosi di una modifica allo stato dell'account.
+- Attendere il naturale aggiornamento dell'indice per la vecchia `/mappa-sito`, già correttamente servita come `410 Gone` con `noindex`; non avviare convalide finché non emergono nuove URL problematiche.
+- Per analisi di decadimento o cannibalizzazione, continuare a usare gli export gratuiti GSC. Con soli 42 clic in tre mesi e query anonimizzate, le conclusioni per singola query hanno affidabilità limitata.
 - Ripetere Lighthouse/PageSpeed mobile e desktop quando la quota è disponibile.
 - Valutare security header aggiuntivi soltanto dopo verifica della configurazione Cloudflare e con piano di rollback.
