@@ -51,7 +51,7 @@
           <li><a href="/#contatti" onclick="closeMenu()">Contatti</a></li>
         </ul>
       </nav>
-      <button class="menu-btn" type="button" aria-label="Menu" onclick="document.getElementById('navmenu').classList.toggle('open')">☰</button>
+      <button class="menu-btn" type="button" aria-label="Menu" aria-controls="navmenu" aria-expanded="false" onclick="toggleMenu(this)">☰</button>
     </div>
   </header>
 
@@ -180,6 +180,6 @@
     </div>
   </footer>
 
-  <script>function closeMenu(){document.getElementById('navmenu').classList.remove('open')}</script>
+  <script>function toggleMenu(button){const open=document.getElementById('navmenu').classList.toggle('open');button.setAttribute('aria-expanded',String(open))}function closeMenu(){document.getElementById('navmenu').classList.remove('open');document.querySelector('.menu-btn').setAttribute('aria-expanded','false')}</script>
 </body>
 </html>
