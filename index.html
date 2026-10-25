@@ -362,6 +362,16 @@
   @media(max-width:900px){
     .cookiebar{left:0;right:0;bottom:0;top:auto;max-width:none;border-radius:12px 12px 0 0;border-left:0;border-right:0;border-bottom:0}
   }
+  /* Su schermi bassi l'hero non entra nel viewport e i pulsanti finiscono
+     sotto la piega. La versione compatta del paragrafo conserva tutti i
+     termini chiave (grafologia forense, arti grafiche, firme, scritture,
+     documenti, carta, stampa, imballaggi, macchinari) e libera lo spazio
+     necessario. Da 820px di altezza in su resta il testo esteso. */
+  .lead-compact{display:none}
+  @media(max-width:900px),(max-height:820px){
+    .lead-full{display:none}
+    .lead-compact{display:inline}
+  }
   @media(max-width:430px){
     .cookiebar{padding:7px 10px}
     .cookiebar p{font-size:.63rem;line-height:1.28}
@@ -464,7 +474,7 @@
         Consulente Tecnico d’Ufficio e Perito del Tribunale di Lecce<span class="sep">·</span>CTU e CTP
       </div>
       <div class="divider"></div>
-      <p class="lead">Consulenze tecniche giudiziarie e stragiudiziali nelle discipline della grafologia forense e delle arti grafiche: analisi e comparazione di firme e scritture, esame tecnico dei documenti, perizie su carta, prodotti della stampa, imballaggi, macchinari e attrezzature del settore grafico. Incarichi in tutta Italia.</p>
+      <p class="lead"><span class="lead-full">Consulenze tecniche giudiziarie e stragiudiziali nelle discipline della grafologia forense e delle arti grafiche: analisi e comparazione di firme e scritture, esame tecnico dei documenti, perizie su carta, prodotti della stampa, imballaggi, macchinari e attrezzature del settore grafico. Incarichi in tutta Italia.</span><span class="lead-compact">Grafologia forense e arti grafiche: perizie su firme, scritture e documenti, su carta, prodotti della stampa, imballaggi e macchinari. Incarichi giudiziari e stragiudiziali in tutta Italia.</span></p>
       <div class="cta">
         <a href="#contatti" class="btn solid">Contatta lo studio</a>
         <a href="#iscrizioni" class="btn">Qualifiche e iscrizioni</a>
