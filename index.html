@@ -355,6 +355,39 @@
   .cookiebar p{font-family:'Nunito',sans-serif;font-size:.75rem;color:var(--body);line-height:1.5;margin:0 0 11px}
   .cookiebar p a{color:var(--accent);text-decoration:underline}
   .cookiebar-btns{display:flex;gap:6px;align-items:center;justify-content:flex-end}
+
+  /* Cookie bar: sotto i 900px diventa una barra ancorata in fondo, a tutta
+     larghezza, e l'hero riceve spazio pari alla sua altezza finche' e'
+     visibile, cosi' non copre mai il titolo ne' i pulsanti di contatto. */
+  @media(max-width:900px){
+    .cookiebar{left:0;right:0;bottom:0;top:auto;max-width:none;border-radius:12px 12px 0 0;border-left:0;border-right:0;border-bottom:0}
+  }
+  @media(max-width:430px){
+    .cookiebar{padding:7px 10px}
+    .cookiebar p{font-size:.63rem;line-height:1.28}
+    .cookiebar .cbtn{padding:6px 9px;font-size:.67rem;min-height:32px}
+    .cookiebar-in{gap:8px}
+  }
+  body.cookiebar-open{padding-bottom:var(--cookiebar-h,0px)}
+  .cb-short{display:none}
+  /* Finche' il banner e' visibile su schermi piccoli, l'hero riduce i propri
+     margini verticali: cosi' i pulsanti restano sopra la barra sul maggior
+     numero possibile di formati. A banner chiuso l'aspetto non cambia. */
+  @media(max-width:900px),(max-height:900px){
+    body.cookiebar-open .hero{padding-top:clamp(84px,13vw,110px);padding-bottom:clamp(12px,4vw,36px)}
+    body.cookiebar-open .hero .cta{margin-top:clamp(8px,2.4vw,18px);gap:10px}
+  }
+  @media(max-width:900px),(max-height:820px){
+    .cb-long{display:none}
+    .cb-short{display:inline}
+    .cookiebar{padding:8px 12px;left:0;right:0;bottom:0;top:auto;max-width:none;border-radius:12px 12px 0 0;border-left:0;border-right:0;border-bottom:0}
+    /* riga singola: testo a sinistra, pulsanti a destra */
+    .cookiebar-in{display:flex;align-items:center;gap:10px}
+    .cookiebar p{font-size:.68rem;line-height:1.3;margin:0;flex:1 1 auto;min-width:0}
+    .cookiebar-btns{flex:0 0 auto;gap:5px}
+    .cookiebar .cbtn{min-height:34px;padding:6px 10px;font-size:.72rem;white-space:nowrap}
+  }
+
   .cbtn{font-family:'Nunito',sans-serif;font-size:.72rem;letter-spacing:.4px;cursor:pointer;transition:all .25s;border-radius:5px}
   .cbtn.ghost{background:transparent;color:var(--muted);border:0;padding:8px 8px;text-decoration:underline}
   .cbtn.ghost:hover{color:var(--blue)}
@@ -362,12 +395,16 @@
   .cbtn.solid:hover{background:var(--accent);border-color:var(--accent)}
   @media(max-width:480px){
     .cookiebar{
-      top:78px;
-      right:10px;
-      bottom:auto;
-      left:10px;
+      top:auto;
+      right:0;
+      bottom:0;
+      left:0;
       max-width:none;
       padding:11px 14px;
+      border-radius:12px 12px 0 0;
+      border-left:0;
+      border-right:0;
+      border-bottom:0;
     }
     .cookiebar p{margin-bottom:7px;font-size:.72rem;line-height:1.4}
     .cbtn{min-height:36px}
@@ -704,7 +741,7 @@
 
 <div id="cookiebar" class="cookiebar show" role="dialog" aria-label="Scelta per Google Maps">
   <div class="cookiebar-in">
-    <p>Usiamo cookie tecnici. Con il tuo consenso carichiamo <strong>Google Maps</strong>, che può usare cookie di terze parti. Consulta la <a href="/cookie-policy/">Cookie Policy</a>.</p>
+    <p><span class="cb-long">Usiamo cookie tecnici. Con il tuo consenso carichiamo <strong>Google Maps</strong>, che può usare cookie di terze parti. Consulta la <a href="/cookie-policy/">Cookie Policy</a>.</span><span class="cb-short"><strong>Google Maps</strong>: cookie di terze parti. <a href="/cookie-policy/">Dettagli</a></span></p>
     <div class="cookiebar-btns">
       <button class="cbtn ghost" type="button" onclick="cookieConsent('reject')">Rifiuta</button>
       <button class="cbtn solid" type="button" onclick="cookieConsent('accept')">Consenti Maps</button>
@@ -730,9 +767,11 @@
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
   function loadMap(){var h=document.getElementById('mapHolder');if(!h||h.dataset.loaded)return;var f=document.createElement('iframe');f.setAttribute('src',h.getAttribute('data-src'));f.setAttribute('title','Posizione dello studio a Maglie (LE)');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','no-referrer-when-downgrade');f.style.width='100%';f.style.height='100%';f.style.border='0';h.classList.remove('map-consent');h.innerHTML='';h.appendChild(f);h.dataset.loaded='1';}
-  function cookieConsent(v){try{document.cookie='cc_consent='+v+';path=/;max-age=15552000;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.remove('show');if(v==='accept')loadMap();}
-  function manageConsent(){try{document.cookie='cc_consent=;path=/;max-age=0;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}
-  (function(){var val=null;try{var m=document.cookie.match(/(?:^|;)\s*cc_consent=([^;]+)/);if(m)val=m[1];}catch(e){}if(!val){var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}else if(val==='accept'){loadMap();}})();
+  function cookiebarSpace(){var cb=document.getElementById('cookiebar');if(!cb)return;var on=cb.classList.contains('show');document.body.classList.toggle('cookiebar-open',on);document.documentElement.style.setProperty('--cookiebar-h',(on?cb.offsetHeight:0)+'px');}
+  window.addEventListener('resize',cookiebarSpace);
+  function cookieConsent(v){try{document.cookie='cc_consent='+v+';path=/;max-age=15552000;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.remove('show');cookiebarSpace();if(v==='accept')loadMap();}
+  function manageConsent(){try{document.cookie='cc_consent=;path=/;max-age=0;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');cookiebarSpace();}
+  (function(){var val=null;try{var m=document.cookie.match(/(?:^|;)\s*cc_consent=([^;]+)/);if(m)val=m[1];}catch(e){}if(!val){var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}else if(val==='accept'){loadMap();}cookiebarSpace();})();
 </script>
 
 
