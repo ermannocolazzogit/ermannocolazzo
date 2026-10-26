@@ -1,7 +1,7 @@
 :root{--ink:#17232b;--muted:#5e6b73;--blue:#087bbf;--blue-dark:#075f93;--orange:#ed6a2c;--paper:#fff;--soft:#f3f7f9;--line:#dce5e9;--max:1180px}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{margin:0;color:var(--ink);background:var(--paper);font-family:"Nunito",Arial,sans-serif;font-size:17px;line-height:1.7}
+body{margin:0;color:var(--ink);background:var(--paper);font-family:'EB Garamond',Georgia,serif;font-size:17px;line-height:1.7}
 a{color:inherit;text-decoration:none}
 img{display:block;max-width:100%}
 .container{width:min(calc(100% - 40px),var(--max));margin-inline:auto}
@@ -27,7 +27,7 @@ main section{padding:86px 0}
 .breadcrumbs{display:flex;flex-wrap:wrap;align-items:center;gap:9px;margin-bottom:25px;color:var(--muted);font-size:14px;font-weight:600}
 .breadcrumbs a:hover{color:var(--blue)}
 .kicker{display:block;margin-bottom:13px;color:var(--blue);font-size:13px;font-weight:800;letter-spacing:.14em;text-transform:uppercase}
-h1,h2,h3{margin:0 0 18px;font-family:"EB Garamond",Georgia,serif;font-weight:500;line-height:1.12}
+h1,h2,h3{margin:0 0 18px;font-family:'Nunito',Arial,sans-serif;font-weight:500;line-height:1.12}
 h1{max-width:900px;font-size:clamp(43px,6vw,72px)}
 h2{font-size:clamp(32px,4vw,48px)}
 h3{font-size:27px}
@@ -77,3 +77,6 @@ footer{padding:62px 0;background:#091d27;color:#dce7ec;text-align:center}
 }
 @media(max-width:480px){.container{width:min(calc(100% - 28px),var(--max))}.wordmark .l2{display:block;font-size:.62rem}.logo-emblem{width:52px}.wordmark .l1{font-size:20px}h1{font-size:40px}.cta{align-items:stretch;flex-direction:column}.btn{width:100%}}
 
+/* Interfaccia sempre in carattere lineare: non eredita dal corpo del testo,
+   che e' in Garamond. Regola unica, in coda per avere la precedenza. */
+.btn,.kicker,.breadcrumbs,.services-back,.menu,.wordmark,.frole,.fnote,.evidence-list{font-family:'Nunito',Arial,sans-serif}
