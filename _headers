@@ -1,22 +1,35 @@
 # Cache degli asset statici su Cloudflare Pages.
 #
-# I quattro file qui sotto sono referenziati nell'HTML con una query di
-# versione (?v=...): cambiando quel valore cambia l'URL, quindi la cache
-# viene invalidata da sola. Per questo possono avere durata lunga e
-# "immutable". ATTENZIONE: se si modifica uno di questi file SENZA
-# aggiornare il ?v= nell'HTML, i browser continueranno a servire la
-# versione vecchia.
+# PERCHE' SERVE
+# Il default di Pages e' "public, max-age=14400, must-revalidate". Il
+# must-revalidate fa sì che Cloudflare ricontrolli l'origine a OGNI
+# richiesta: in produzione lo stato osservato e' sempre REVALIDATED, mai
+# HIT. Togliendolo, questi file vengono serviti direttamente dall'edge.
+#
+# PERCHE' 30 GIORNI E NON UN ANNO
+# I quattro file sono referenziati nell'HTML con una query di versione
+# (?v=...), quindi cambiando quel valore cambia l'URL e la cache si
+# invalida da sola. In teoria sopporterebbero un anno con "immutable".
+# In pratica, se si modifica uno di questi file SENZA aggiornare il ?v=,
+# la versione vecchia resta servita dall'edge e nemmeno un nuovo deploy
+# la sostituisce: occorre una purge manuale. Con 30 giorni quell'errore
+# si corregge da solo; la differenza pratica per chi rivisita il sito e'
+# trascurabile.
+#
+# NOTA: queste regole non valgono per le risposte generate dalle Pages
+# Functions (functions/: atom, feed, mappa-sito, rss).
+
 /styles.css
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
 
 /logo-emblem.png
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
 
 /logo-emblem-white.png
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
 
 /ermanno-colazzo-perito-grafologo.jpg
-  Cache-Control: public, max-age=31536000, immutable
+  Cache-Control: public, max-age=2592000
 
 # Le anteprime social non sono versionate: durata piu' breve, cosi' una
 # sostituzione viene recepita entro una settimana.
@@ -26,5 +39,7 @@
 /social-card.png
   Cache-Control: public, max-age=604800
 
-# L'HTML resta rivalidato a ogni richiesta: il TTFB misurato e' 121 ms e
-# un deploy deve essere visibile subito.
+# L'HTML resta sul default di Pages, deliberatamente. TTFB misurato in
+# produzione: mediana 150 ms su 8 richieste (94-217 ms), contro una
+# soglia "buona" di 800 ms. Dare all'HTML una cache edge lunga e' il modo
+# noto per ritrovarsi pagine vecchie dopo un deploy.
