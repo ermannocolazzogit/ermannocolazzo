@@ -204,15 +204,12 @@
   .distinct .kicker{color:#ff9db4}
   .distinct h2{color:#fff;font-size:clamp(1.6rem,4.4vw,2.3rem);margin-top:16px;max-width:760px;margin-left:auto;margin-right:auto}
   .distinct .intro{max-width:640px;margin:20px auto 46px;color:#cfddee;font-style:italic;font-size:clamp(1.04rem,2.2vw,1.18rem)}
-  .dgrid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(255,255,255,.18)}
+  .dgrid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid rgba(255,255,255,.18)}
   .dgrid .d{padding:clamp(28px,4vw,40px) 22px;border-right:1px solid rgba(255,255,255,.18)}
   .dgrid .d:last-child{border-right:0}
   .dgrid .d .num{font-family:'Nunito',Arial,sans-serif;font-size:1.6rem;color:#ff9db4;margin-bottom:12px}
   .dgrid .d .txt{font-family:'Nunito',sans-serif;font-size:.9rem;color:#e4edf7;line-height:1.6}
   .verification-links{display:flex;flex-wrap:wrap;justify-content:center;gap:14px;margin-top:34px}
-  .source-note{max-width:780px;margin:20px auto 0;color:#9fb5cf;font-family:'Nunito',sans-serif;font-size:.78rem;line-height:1.65}
-  .source-note a{color:#fff;border-bottom:1px solid #ff9db4}
-  .source-note a:hover{color:#ff9db4}
 
   /* Ambiti principali */
   .macro-areas{background:#fff;border-bottom:1px solid var(--line)}
@@ -327,9 +324,9 @@
   @media(max-width:960px){
     .about{grid-template-columns:190px 1fr;gap:36px}
     .portrait{width:190px}
-    .dgrid{grid-template-columns:1fr 1fr}
-    .dgrid .d:nth-child(2){border-right:0}
-    .dgrid .d:nth-child(1),.dgrid .d:nth-child(2){border-bottom:1px solid rgba(255,255,255,.18)}
+    .dgrid{grid-template-columns:1fr}
+    .dgrid .d{border-right:0}
+    .dgrid .d:not(:last-child){border-bottom:1px solid rgba(255,255,255,.18)}
     .process{grid-template-columns:1fr 1fr}
   }
   @media(max-width:760px){
@@ -524,7 +521,6 @@
     <h2>Arti Grafiche, carta e stampa</h2>
     <p class="intro">Il Dott. Ermanno Colazzo è iscritto all’Ordine dei Periti Industriali nella specializzazione Arti Grafiche e agli Albi CTU e Periti del Tribunale Ordinario di Lecce sia nell’ambito della grafologia forense sia nella categoria “Carta e stampa”, con le relative specializzazioni.</p>
     <div class="dgrid">
-      <div class="d"><div class="num">8</div><div class="txt">Periti Industriali presenti nell’Albo Unico nazionale nella specializzazione Arti Grafiche</div></div>
       <div class="d"><div class="num">n. 848</div><div class="txt">Ordine dei Periti Industriali della Provincia di Lecce · Sezione Arti Grafiche</div></div>
       <div class="d"><div class="num">n. 131</div><div class="txt">Albo CTU del Tribunale Ordinario di Lecce · Categorie carta-stampa e grafologia forense</div></div>
       <div class="d"><div class="num">n. 27</div><div class="txt">Albo Periti del Tribunale Ordinario di Lecce · Categorie carta-stampa e grafologia forense</div></div>
@@ -533,7 +529,6 @@
       <a class="btn solid" href="https://cnpi.eu/albounico/" target="_blank" rel="noopener">Consulta l’Albo Unico</a>
       <a class="btn" href="https://alboctuelenchi.giustizia.it/gestione-albi/ricercaIscritti/load" target="_blank" rel="noopener">Consulta gli Albi giudiziari</a>
     </div>
-    <p class="source-note">Verifica effettuata il 30 luglio 2026 consultando le banche dati ufficiali. Il confronto riguarda i professionisti presenti nell’Albo Unico nazionale nella specializzazione Arti Grafiche.</p>
   </div>
 </section>
 
@@ -728,7 +723,7 @@
       <div id="mapHolder" class="map-frame map-consent" data-src="https://www.google.com/maps?q=40.114079,18.310372&amp;z=16&amp;hl=it&amp;output=embed">
         <div class="map-consent-inner">
           <p>Per mostrare la mappa carichiamo <strong>Google Maps</strong>, che può installare cookie di terze parti.</p>
-          <button type="button" class="map-load-btn" onclick="loadMap()">Carica la mappa</button>
+          <button type="button" class="map-load-btn" onclick="cookieConsent('accept')">Carica la mappa</button>
           <span class="map-consent-note">Consulta la <a href="/cookie-policy/">Cookie Policy</a></span>
         </div>
       </div>
@@ -751,7 +746,7 @@
   </div>
 </footer>
 
-<div id="cookiebar" class="cookiebar show" role="dialog" aria-label="Scelta per Google Maps">
+<div id="cookiebar" class="cookiebar" role="dialog" aria-label="Scelta per Google Maps">
   <div class="cookiebar-in">
     <p><span class="cb-long">Usiamo cookie tecnici. Con il tuo consenso carichiamo <strong>Google Maps</strong>, che può usare cookie di terze parti. Consulta la <a href="/cookie-policy/">Cookie Policy</a>.</span><span class="cb-short"><strong>Google Maps</strong>: cookie di terze parti. <a href="/cookie-policy/">Dettagli</a></span></p>
     <div class="cookiebar-btns">
@@ -778,12 +773,15 @@
     entries.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target);}});
   },{threshold:.12});
   document.querySelectorAll('.reveal').forEach(function(el){io.observe(el);});
-  function loadMap(){var h=document.getElementById('mapHolder');if(!h||h.dataset.loaded)return;var f=document.createElement('iframe');f.setAttribute('src',h.getAttribute('data-src'));f.setAttribute('title','Posizione dello studio a Maglie (LE)');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','no-referrer-when-downgrade');f.style.width='100%';f.style.height='100%';f.style.border='0';h.classList.remove('map-consent');h.innerHTML='';h.appendChild(f);h.dataset.loaded='1';}
+  var mapHolder=document.getElementById('mapHolder');
+  var mapPlaceholder=mapHolder?mapHolder.innerHTML:'';
+  function loadMap(){var h=mapHolder;if(!h||h.dataset.loaded)return;var f=document.createElement('iframe');f.setAttribute('src',h.getAttribute('data-src'));f.setAttribute('title','Posizione dello studio a Maglie (LE)');f.setAttribute('loading','lazy');f.setAttribute('referrerpolicy','no-referrer-when-downgrade');f.style.width='100%';f.style.height='100%';f.style.border='0';h.classList.remove('map-consent');h.innerHTML='';h.appendChild(f);h.dataset.loaded='1';}
+  function unloadMap(){var h=mapHolder;if(!h||!h.dataset.loaded)return;h.innerHTML=mapPlaceholder;h.classList.add('map-consent');delete h.dataset.loaded;}
   function cookiebarSpace(){var cb=document.getElementById('cookiebar');if(!cb)return;var on=cb.classList.contains('show');document.body.classList.toggle('cookiebar-open',on);document.documentElement.style.setProperty('--cookiebar-h',(on?cb.offsetHeight:0)+'px');}
   window.addEventListener('resize',cookiebarSpace);
-  function cookieConsent(v){try{document.cookie='cc_consent='+v+';path=/;max-age=15552000;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.remove('show');cookiebarSpace();if(v==='accept')loadMap();}
-  function manageConsent(){try{document.cookie='cc_consent=;path=/;max-age=0;SameSite=Lax';}catch(e){}var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');cookiebarSpace();}
-  (function(){var val=null;try{var m=document.cookie.match(/(?:^|;)\s*cc_consent=([^;]+)/);if(m)val=m[1];}catch(e){}if(!val){var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');}else if(val==='accept'){loadMap();}cookiebarSpace();})();
+  function cookieConsent(v){if(v!=='accept'&&v!=='reject')return;try{document.cookie='cc_consent='+v+';path=/;max-age=15552000;SameSite=Lax;Secure';}catch(e){}if(v==='accept')loadMap();else unloadMap();var cb=document.getElementById('cookiebar');if(cb)cb.classList.remove('show');cookiebarSpace();}
+  function manageConsent(){var cb=document.getElementById('cookiebar');if(cb)cb.classList.add('show');cookiebarSpace();}
+  (function(){var val=null;try{var m=document.cookie.match(/(?:^|;)\s*cc_consent=([^;]+)/);if(m)val=m[1];}catch(e){}if(val==='accept')loadMap();else unloadMap();var cb=document.getElementById('cookiebar');if(cb)cb.classList.toggle('show',val!=='accept'&&val!=='reject');cookiebarSpace();})();
 </script>
 
 

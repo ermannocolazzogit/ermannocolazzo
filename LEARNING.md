@@ -1,5 +1,37 @@
 # Decisioni e apprendimenti
 
+## Consenso Maps e coerenza del sito — 27 ottobre 2026
+
+### Problema e stato precedente
+
+Sul commit `70861e953762381f703da06d4d4fffbcece3c9f8`, dopo accettazione, riapertura delle scelte e rifiuto, l'iframe Maps restava nella pagina. Il banner era inizializzato con `show` senza chiusura esplicita per scelte salvate. Il pulsante nel segnaposto chiamava direttamente `loadMap()` senza registrare il consenso. Il difetto è stato riprodotto anche dal test di regressione prima di applicare la correzione.
+
+Il precedente intervento sull'unicità dell'iscrizione lasciava il numero nazionale “8” e note senza confronto visibile. I lastmod non rappresentavano le modifiche recenti, la documentazione citava ancora dieci URL e un endpoint mappa-sito 410, mentre il codice e il live erano già a 11 URL e redirect 301. Il markup FAQPage della pagina costi non corrispondeva alla presentazione discorsiva visibile.
+
+### Decisione e motivazione
+
+Correzioni minime: una sola scelta di consenso per entrambi i pulsanti di caricamento, rimozione immediata dell'iframe al rifiuto, ripristino del segnaposto e rispetto della scelta salvata. La riapertura del banner non cancella il consenso: la nuova decisione viene registrata quando l'utente sceglie.
+
+Eliminati soltanto residui del vecchio confronto nazionale, adeguata la griglia alle tre iscrizioni personali, chiarito il confine del servizio gratuito, mantenuti gli schemi pertinenti e corretti lastmod e documentazione. Nessun cambio a URL, title, canonical, destinazione o campi del modulo; nessuna riscrittura SEO generale, modifica DNS o aggiunta di dipendenze.
+
+Le date del 26/10 nella sitemap derivano dalle modifiche ai collegamenti di contenuto del commit `ab1959a` e alle FAQ del commit `1bef03a`; quelle del 27/10 corrispondono alle correzioni odierne. Non aggiornare lastmod al solo cambio di font, cache o documentazione.
+
+### Rischi e verifiche
+
+Test locali: prima visita, rifiuto, ricarica con scelta salvata, riapertura senza perdita della scelta, accettazione, assenza di iframe duplicati, revoca senza ricarica, ripristino del segnaposto, nuova accettazione, valore salvato non valido e cookie disabilitati. Controlli sintattici, JSON-LD, sitemap, link, frammenti e modulo invariato superati.
+
+Verifica browser su anteprima e dominio pubblico: da completare dopo il deploy; non confondere un push con la conferma della pubblicazione.
+
+### Dati e dipendenze
+
+La lettura attuale di Search Console e la rettifica dell'indirizzo Reteimprese richiedono autenticazione. Conservare le nuove estrazioni in archivio privato con date e filtri completi. Non sostituire il confronto di 28 giorni con “Oggi”, né attribuire variazioni di pochi clic a modifiche pubblicate da pochi giorni. Lo storico di ottobre 24 resta datato e distinto dalle nuove misurazioni.
+
+Il controllo DNS ha trovato MX Register.it ma nessun SPF/DMARC; ciò non dimostra caselle attive né autorizza a rimuovere il record MX. Prima di una politica anti-impersonificazione ricostruire tutti gli invii e predisporre il rollback della zona, che non è coperto da Git.
+
+### Rollback
+
+Revertire il commit delle correzioni preserva la cronologia. Il riferimento completo precedente è `70861e953762381f703da06d4d4fffbcece3c9f8`, con albero `7a8d57585c425862b6d2eb5669ded262cb5a9d64`, ricostruito e verificato prima delle modifiche. Nessuna impostazione esterna è stata cambiata in questa fase.
+
 ## Audit SEO di secondo livello — 24 ottobre 2026
 
 ### Stato precedente

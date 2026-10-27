@@ -1,8 +1,38 @@
 # Stato del progetto
 
-Ultimo aggiornamento: 24 ottobre 2026.
+Ultimo aggiornamento: 27 ottobre 2026.
 
-## Stato verificato
+## Correzioni del 27 ottobre 2026
+
+- Riferimento precedente alle correzioni: `70861e953762381f703da06d4d4fffbcece3c9f8`, branch `main`. Lo snapshot dei 31 file coincide con l'albero Git `7a8d57585c425862b6d2eb5669ded262cb5a9d64`; nessuna modifica locale preesistente e nessuna PR aperta al controllo iniziale.
+- Il check GitHub Cloudflare Pages del commit di riferimento risulta completato con successo per il progetto `ermannocolazzo`. Gli elementi HTML e il CSS verificati sul dominio pubblico corrispondono al sorgente. Non è stata modificata la configurazione interna Cloudflare.
+- Corretto il ciclo di consenso Maps: il rifiuto rimuove l'iframe e ripristina il segnaposto; una scelta memorizzata non riapre il banner; “Carica la mappa” registra la stessa accettazione del banner; riaprire le scelte conserva il consenso precedente fino alla nuova decisione.
+- Rimossi il dato nazionale “8” e le note di confronto rimaste dopo la rimozione dell'affermazione sull'unicità. Restano le iscrizioni professionali personali e i collegamenti agli albi. La griglia della homepage segue le tre iscrizioni rimaste.
+- Nella pagina dei costi è esplicitato il confine fra primo inquadramento della fattibilità/preventivo gratuiti e analisi, parere o relazione su incarico retribuito. Rimosso soltanto il blocco FAQPage non rappresentato come domande visibili; mantenuti WebPage e BreadcrumbList.
+- Sitemap: sempre 11 URL. `lastmod` del 27/10 per homepage, arti grafiche e costi; del 26/10 per le altre pagine interessate dai collegamenti alla nuova pagina costi e per le FAQ riviste il 26/10. Nessuna data modificata per informative o per un semplice cambio del parametro di versione CSS.
+- README allineato ai file esistenti e al redirect attuale di `/mappa-sito`.
+- Test locali superati: riproduzione del precedente difetto e 13 scenari di consenso, sintassi di 11 script inline, 13 pagine HTML, 11 URL di sitemap, JSON-LD, collegamenti e frammenti, metadati invariati, modulo identico al precedente, `git diff --check`.
+- Verifica browser su anteprima e produzione delle correzioni: **NON VERIFICATA, da completare dopo il deploy**.
+
+## Riscontri pubblici del 27 ottobre prima delle correzioni
+
+- Le 11 pagine canoniche della sitemap rispondono `200`; le varianti della homepage HTTP e senza `www` convergono con un solo `301` a HTTPS `www`.
+- Nessun link interno rotto, frammento inesistente o riferimento HTTP rilevato nei collegamenti e negli asset HTML acquisiti. Title, description, canonical e singolo H1 presenti sulle 11 pagine della sitemap.
+- `/mappa-sito` e `/mappa-sito/` eseguono oggi `301` verso `/faq/`; il precedente stato `410` descritto nello storico del 24/10 è superato.
+- I feed `/feed`, `/feed/`, `/rss/`, `/atom/` e le query `?format=feed&type=rss` / `atom` rispondono `410`; una URL inesistente risponde `404`.
+- PageSpeed Insights homepage, 27/10 ore 06:36 CET, prima delle correzioni: mobile prestazioni 87, accessibilità 97, best practice 100, SEO 100; desktop 99/97/100/100. LCP mobile 3,2 s, desktop 0,8 s; CLS 0,052 e 0,029; TBT 0 ms. È un singolo test di laboratorio per dispositivo, non un dato di campo né una misura delle posizioni Google. CrUX non espone dati sufficienti.
+- DNS pubblico: nameserver Cloudflare, MX `10 mail.register.it.`, nessun SPF restituito fra i TXT del dominio e nessun record DMARC. Nessuna modifica DNS; l'eventuale protezione email richiede prima l'inventario degli invii autorizzati.
+- Reteimprese pubblica ancora “Via Muro 3” invece di “Via Muro Leccese 3”: la rettifica richiede accesso al profilo e non è stata eseguita dal codice del sito.
+
+## Dati confrontabili e limiti di accesso
+
+GSC Wizard restituisce piano/prova non attivi. L'interfaccia gratuita Google Search Console, aperta per leggere dati aggiornati, richiede autenticazione. Lo storico sotto resta quello del 24/10 e non deve essere presentato come una nuova misurazione del 27/10.
+
+Per ogni nuova estrazione registrare proprietà `sc-domain:ermannocolazzo.it`, ricerca Web, intervalli espliciti di 28 giorni completi e contigui, stessi filtri Paese/dispositivo, data di estrazione e ultimo giorno consolidato. Conservare totali della proprietà, dati giornalieri, pagine e query, distinguendo le query anonime non esportate. I totali non vanno ricavati sommando le righe per query. Le esportazioni analitiche restano in un archivio privato, non in questo repository pubblico.
+
+## Storico verificato il 24 ottobre 2026
+
+### Stato tecnico rilevato il 24 ottobre
 
 - Repository: `ermannocolazzogit/ermannocolazzo`, branch `main`.
 - Commit stabile precedente all'audit: `dd792144dac50ae6196394bc241909765c0b372a` (`Fix FAQ home link`).
@@ -15,7 +45,7 @@ Ultimo aggiornamento: 24 ottobre 2026.
 - Verifica responsive della homepage a 390 x 844 e 1366 x 768: nessun overflow orizzontale; menu mobile funzionante.
 - Register.it: in base alla verifica precedente richiamata dal progetto, non risultano caselle email o alias attivi per il dominio.
 
-## Google Search Console
+### Google Search Console — rilevazione storica del 24 ottobre
 
 Verifica diretta eseguita il 24 ottobre 2026 sulla proprietà dominio `sc-domain:ermannocolazzo.it`, usando l'interfaccia Google e gli export Excel gratuiti.
 
@@ -31,14 +61,14 @@ Verifica diretta eseguita il 24 ottobre 2026 sulla proprietà dominio `sc-domain
 - Azioni manuali: nessun problema rilevato. Problemi di sicurezza: nessun problema rilevato.
 - Core Web Vitals: Google non dispone di dati reali sufficienti negli ultimi 90 giorni, sia mobile sia desktop.
 
-## Limiti e stato non verificato
+### Limiti registrati il 24 ottobre
 
 - Core Web Vitals di campo: indisponibili per traffico insufficiente nel Chrome UX Report; non costituisce un errore del sito.
 - PageSpeed Insights: tentativo eseguito, ma API Google in quota esaurita (`429`); punteggi Lighthouse e metriche di laboratorio **NON VERIFICATI**.
 - Configurazione interna Cloudflare (progetto, regole, SSL/TLS, DNS e impostazioni email-obfuscation): osservata solo dagli effetti pubblici, non modificata e **NON VERIFICATA** nel pannello.
 - Invio reale del modulo Formspree: non eseguito durante l'audit SEO, per evitare trasmissioni di dati e messaggi di prova non richiesti.
 
-## Intervento dell'audit
+### Intervento dell'audit del 24 ottobre
 
 - Aggiunto al menu mobile lo stato accessibile `aria-expanded` e il collegamento `aria-controls`, sincronizzati in apertura e chiusura.
 - Allineato il `lastmod` FAQ in sitemap alla modifica del 3 ottobre 2026.
