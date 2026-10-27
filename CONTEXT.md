@@ -12,7 +12,10 @@ Ultimo aggiornamento: 27 ottobre 2026.
 - Sitemap: sempre 11 URL. `lastmod` del 27/10 per homepage, arti grafiche e costi; del 26/10 per le altre pagine interessate dai collegamenti alla nuova pagina costi e per le FAQ riviste il 26/10. Nessuna data modificata per informative o per un semplice cambio del parametro di versione CSS.
 - README allineato ai file esistenti e al redirect attuale di `/mappa-sito`.
 - Test locali superati: riproduzione del precedente difetto e 13 scenari di consenso, sintassi di 11 script inline, 13 pagine HTML, 11 URL di sitemap, JSON-LD, collegamenti e frammenti, metadati invariati, modulo identico al precedente, `git diff --check`.
-- Verifica browser su anteprima e produzione delle correzioni: **NON VERIFICATA, da completare dopo il deploy**.
+- Pubblicazione: PR #10 integrata in `main` con commit `a4b2ecb87eecba4144586a26c58135ce1be7882c`; check Cloudflare Pages riuscito e sorgente effettivamente verificato sul dominio pubblico.
+- Le anteprime Cloudflare eseguono `301` verso il dominio canonico e non permettono test isolati. Sulla produzione aggiornate sono state verificate 10 fasi del consenso con mouse e tastiera: rifiuto, ricarica, caricamento dal segnaposto, persistenza dell'accettazione, revoca immediata, ripristino e nuova accettazione senza iframe duplicati. Stato finale lasciato su rifiuto.
+- Verifica HTTP dopo il deploy: tutte le 11 pagine canoniche `200`, sitemap identica al sorgente, title/description/H1/canonical e JSON-LD corrispondenti, modulo identico al sorgente, quattro varianti della homepage con `301` al canonico. Desktop senza overflow orizzontale; griglia delle tre iscrizioni verificata nel browser. Resa mobile della homepage osservata nella nuova prova Lighthouse, con entrambi i pulsanti iniziali disponibili; matrice interattiva completa smartphone/tablet **NON VERIFICATA**.
+- Nuovo test PageSpeed homepage del 27/10 ore 07:49 CET: mobile 98/97/100/100, LCP 1,8 s, CLS 0,034, TBT 0 ms; desktop 99/97/100/100, LCP 0,8 s, CLS 0,011, TBT 0 ms. Confronto con la prova delle 06:36 limitato a due singole misure: non attribuire la differenza alla sola correzione di Maps. Dati CrUX ancora assenti.
 
 ## Riscontri pubblici del 27 ottobre prima delle correzioni
 

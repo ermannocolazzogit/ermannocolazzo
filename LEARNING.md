@@ -20,7 +20,11 @@ Le date del 26/10 nella sitemap derivano dalle modifiche ai collegamenti di cont
 
 Test locali: prima visita, rifiuto, ricarica con scelta salvata, riapertura senza perdita della scelta, accettazione, assenza di iframe duplicati, revoca senza ricarica, ripristino del segnaposto, nuova accettazione, valore salvato non valido e cookie disabilitati. Controlli sintattici, JSON-LD, sitemap, link, frammenti e modulo invariato superati.
 
-Verifica browser su anteprima e dominio pubblico: da completare dopo il deploy; non confondere un push con la conferma della pubblicazione.
+Le anteprime Cloudflare reindirizzano con `301` al dominio canonico: il check di deploy dell'anteprima, da solo, non consente una verifica isolata della nuova versione. Non è stata cambiata questa configurazione per eseguire il test.
+
+PR #10 integrata nel commit `a4b2ecb87eecba4144586a26c58135ce1be7882c`, con deploy Cloudflare riuscito. Verifica eseguita sulla produzione aggiornata: 10 fasi del ciclo di consenso, comprese azioni da tastiera, persistenza alla ricarica, revoca senza ricarica e nuova accettazione; tutte superate. Verificate 11 pagine `200`, sitemap, metadati, JSON-LD, modulo e quattro redirect della homepage. La resa mobile della homepage è stata osservata nella prova Lighthouse; non è stata svolta una matrice interattiva completa smartphone/tablet.
+
+Conservati i due report Lighthouse del 27/10: ore 06:36, mobile prestazioni 87 e LCP 3,2 s; ore 07:49, mobile 98 e LCP 1,8 s; desktop 99 in entrambe. Il miglioramento fra due singoli test di laboratorio non prova un effetto causale delle correzioni. Non sono disponibili CWV reali sufficienti.
 
 ### Dati e dipendenze
 
