@@ -6,9 +6,9 @@ Sito statico professionale di Ermanno Colazzo, pubblicato dal repository GitHub 
 
 - `index.html`: homepage e modulo di primo contatto.
 - cartelle con `index.html`: pagine dei servizi, FAQ e informative.
-- `styles.css`: foglio di stile condiviso; `original.css` è mantenuto come file di compatibilità.
+- `styles.css`: foglio di stile condiviso dalle pagine dei servizi; homepage, FAQ e informative contengono anche stili inline. `original.css` non è presente e non è referenziato dalle pagine.
 - `sitemap.xml`, `robots.txt`, `_redirects`: indicizzazione e normalizzazione degli URL.
-- `functions/`: risposte `410 Gone` per feed e vecchi endpoint non più utilizzati.
+- `functions/`: risposte `410 Gone` per i feed ritirati e redirect `301` dalla vecchia `/mappa-sito` alle FAQ.
 
 ## Pubblicazione e verifiche
 
