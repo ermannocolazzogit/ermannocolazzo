@@ -28,7 +28,9 @@ Conservati i due report Lighthouse del 27/10: ore 06:36, mobile prestazioni 87 e
 
 ### Dati e dipendenze
 
-La lettura attuale di Search Console e la rettifica dell'indirizzo Reteimprese richiedono autenticazione. Conservare le nuove estrazioni in archivio privato con date e filtri completi. Non sostituire il confronto di 28 giorni con “Oggi”, né attribuire variazioni di pochi clic a modifiche pubblicate da pochi giorni. Lo storico di ottobre 24 resta datato e distinto dalle nuove misurazioni.
+Il 27/10 è riuscita la lettura aggiornata di Search Console nell'interfaccia Google. Conservati in archivio privato il confronto 27/09–24/10/2026 contro 30/08–26/09/2026 e le due estrazioni singole con 28 righe giornaliere ciascuna, stessi filtri e tutte le quattro metriche. Le somme giornaliere di clic e impressioni riconciliano i totali della proprietà. Le righe per pagina hanno aggregazione diversa e non sono sommabili per ricostruire il totale della proprietà; le righe query omettono una parte dei dati. Non sostituire il confronto di 28 giorni con “Oggi”, né attribuire a correzioni del 27/10 variazioni di periodi terminati il 24/10. Lo storico del 24 ottobre resta datato e distinto dalle nuove misurazioni.
+
+La rettifica dell'indirizzo Reteimprese resta aperta: il percorso di autenticazione si è interrotto senza una sessione verificabile. Nessuna modifica del profilo e nessun messaggio di assistenza inviato.
 
 Il controllo DNS ha trovato MX Register.it ma nessun SPF/DMARC; ciò non dimostra caselle attive né autorizza a rimuovere il record MX. Prima di una politica anti-impersonificazione ricostruire tutti gli invii e predisporre il rollback della zona, che non è coperto da Git.
 

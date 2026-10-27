@@ -29,9 +29,11 @@ Ultimo aggiornamento: 27 ottobre 2026.
 
 ## Dati confrontabili e limiti di accesso
 
-GSC Wizard restituisce piano/prova non attivi. L'interfaccia gratuita Google Search Console, aperta per leggere dati aggiornati, richiede autenticazione. Lo storico sotto resta quello del 24/10 e non deve essere presentato come una nuova misurazione del 27/10.
+GSC Wizard restituisce piano/prova non attivi. Il 27/10 l'accesso all'interfaccia gratuita Google Search Console è riuscito. Raccolti tre export Excel originali: confronto 27/09–24/10/2026 contro 30/08–26/09/2026 e due estrazioni singole con le rispettive serie giornaliere. Entrambi i periodi coprono 28 giorni, ricerca Web (basato su testo), tutti i Paesi e dispositivi, senza filtri di pagina o query. Le somme giornaliere coincidono con i totali della proprietà. File e risultati analitici sono conservati in archivio privato; lo storico sotto resta quello del 24/10.
 
-Per ogni nuova estrazione registrare proprietà `sc-domain:ermannocolazzo.it`, ricerca Web, intervalli espliciti di 28 giorni completi e contigui, stessi filtri Paese/dispositivo, data di estrazione e ultimo giorno consolidato. Conservare totali della proprietà, dati giornalieri, pagine e query, distinguendo le query anonime non esportate. I totali non vanno ricavati sommando le righe per query. Le esportazioni analitiche restano in un archivio privato, non in questo repository pubblico.
+La rettifica Reteimprese non è stata eseguita: il percorso di accesso al pannello si è interrotto senza una sessione autenticata verificabile. Nessun dato del profilo è stato modificato.
+
+Per ogni nuova estrazione registrare proprietà `sc-domain:ermannocolazzo.it`, ricerca Web, intervalli espliciti di 28 giorni completi e contigui, stessi filtri Paese/dispositivo, data di estrazione e ultimo giorno consolidato. Conservare totali della proprietà, dati giornalieri, pagine e query, distinguendo le query anonime non esportate. I totali non vanno ricavati sommando le righe per query o pagina: queste ultime hanno un'aggregazione diversa dalla proprietà. Le finestre raccolte terminano prima delle correzioni del 27/10 e non ne misurano l'effetto. Le esportazioni analitiche restano in un archivio privato, non in questo repository pubblico.
 
 ## Storico verificato il 24 ottobre 2026
 
