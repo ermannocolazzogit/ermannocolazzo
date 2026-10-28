@@ -1,5 +1,15 @@
 # Decisioni e apprendimenti
 
+## Nome in primo piano e rimozione dei duplicati — 28 ottobre 2026
+
+Problema e stato precedente: il nuovo ritratto nella testata ripeteva la foto di Chi sono, il logo ripeteva quello della navigazione e il nome era meno evidente dei servizi. Il titolare ha chiesto una variante, l’ha esaminata in anteprima e ne ha poi autorizzato la pubblicazione.
+
+Opzioni: nascondere gli elementi mantenendo markup e CSS, oppure rimuovere il blocco e le regole inutilizzate. Decisione: rimozione completa dalla hero e impaginazione a colonna con testo largo al massimo 760 px. Il nome ha circa il doppio della dimensione del sottotitolo; il testo dell’H1 resta “Grafologia forense e arti grafiche”. Motivazione: dare priorità all’identità professionale e mantenere i font, i colori e le geometrie approvati, senza nuovo codice superfluo.
+
+Risultato verificato in anteprima: leggibilità desktop e telefono, nessun overflow, ritratto inferiore e logo di navigazione conservati. Head, script, modulo e sezioni successive invariati rispetto alla base. Rischio residuo: la resa dei font dipende dallo stesso caricamento Google Fonts già utilizzato; non sono stati introdotti nuovi fornitori. La pubblicazione richiede il check Cloudflare del commit integrato e la verifica sul dominio, da registrare nel resoconto di rilascio.
+
+Rollback: commit di riferimento `206b782216e38edad4ae1c20ef40f208e567c423`; ripristinare solo `index.html` e conservare eventuali altre modifiche. Nessuna risorsa immagine è stata cancellata e non occorre modificare DNS o configurazione Cloudflare.
+
 ## Identità visiva della homepage — 28 ottobre 2026
 
 La testata precedente, centrata e alta almeno quanto il viewport, rendeva meno immediata l’identità visiva condivisa con LinkedIn. Il titolare ha richiesto di riprenderne la nuova grafica.
