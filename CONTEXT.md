@@ -1,6 +1,16 @@
 # Stato del progetto
 
-Ultimo aggiornamento: 27 ottobre 2026.
+Ultimo aggiornamento: 28 ottobre 2026.
+
+## Ridisegno della testata — 28 ottobre 2026
+
+- Base stabile: `e929b1ec4153e3825ca1b966d22d0d9b5ec98b69`, con check Cloudflare Pages riuscito sul progetto esistente `ermannocolazzo`.
+- Su richiesta del titolare, la homepage riprende l’identità della nuova copertina LinkedIn: blu, fasce diagonali, logo originale e ritratto fotografico già presente nel sito. Testo HTML, grafica CSS, nessun nuovo asset o dipendenza.
+- H1 della home: “Grafologia forense e arti grafiche”; nome e qualifiche restano visibili. Apertura sintetica e pulsante di contatto in evidenza. Title, description, canonical e JSON-LD conservati.
+- Composizione desktop con fotografia affiancata; su telefono ritratto compatto e pulsanti a tutta larghezza. Menu compatto fino a 960 px per evitare la sovrapposizione osservata a 768 px.
+- Verifica nel browser alle larghezze iframe 320, 390, 768 e 1024 px e desktop a 1363 px: assenza di overflow orizzontale; screenshot di controllo; menu mobile e tablet apre/chiude e si richiude scegliendo una voce. La verifica usa viewport CSS tramite iframe, senza emulazione di dispositivi fisici.
+- Modulo contatti, script di consenso Maps e tutte le sezioni successive alla testata identici alla base. Sitemap: aggiornato soltanto il lastmod della home al 28 ottobre.
+- Rollback: ripristinare i file modificati dal commit di base sopra indicato, preservando le modifiche successive eventualmente introdotte da altri interventi.
 
 ## Correzioni del 27 ottobre 2026
 

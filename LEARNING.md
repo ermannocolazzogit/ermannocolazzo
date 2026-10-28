@@ -1,5 +1,17 @@
 # Decisioni e apprendimenti
 
+## Identità visiva della homepage — 28 ottobre 2026
+
+La testata precedente, centrata e alta almeno quanto il viewport, rendeva meno immediata l’identità visiva condivisa con LinkedIn. Il titolare ha richiesto di riprenderne la nuova grafica.
+
+La nuova composizione usa il blu e fasce diagonali CSS, il logo originale e il ritratto del sito. I testi restano elementi HTML, con un solo H1 dedicato alle due aree professionali, qualifiche leggibili e i due collegamenti già esistenti. La fotografia è caricata con priorità alta e riutilizza l’asset esistente da circa 47 KB. Non sono stati introdotti font, librerie o richieste a nuovi fornitori.
+
+La prova a 768 px ha evidenziato una sovrapposizione nel menu: il breakpoint della navigazione compatta è stato portato a 960 px, conservando la logica e gli attributi ARIA esistenti. Le verifiche CSS in iframe a 320/390/768/1024 px e sul desktop non mostrano overflow orizzontale; menu e collegamento ai contatti sono stati provati nel browser. Non si tratta di un test su dispositivi fisici.
+
+I controlli sul sorgente confermano modulo, script e sezioni successive invariati, metadati e JSON-LD conservati, ID unici, asset locali presenti e destinazioni dei pulsanti valide. Solo il lastmod della home cambia nella sitemap. Nessuna misura PageSpeed nuova: i valori del 27 ottobre non descrivono questo ridisegno.
+
+Base per rollback: `e929b1ec4153e3825ca1b966d22d0d9b5ec98b69`. Il ripristino va limitato ai file del ridisegno per conservare eventuali modifiche successive.
+
 ## Consenso Maps e coerenza del sito — 27 ottobre 2026
 
 ### Problema e stato precedente
