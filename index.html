@@ -145,21 +145,67 @@
   .menu-btn{display:none;background:none;border:0;color:var(--blue);font-size:1.7rem;cursor:pointer;line-height:1;padding:4px 8px}
 
   /* ---------- Hero ---------- */
-  .hero{position:relative;min-height:100svh;display:flex;align-items:center;text-align:center;color:#fff;overflow:hidden;
-    background:#003c81;
-    padding:clamp(120px,20vw,150px) 0 clamp(70px,12vw,95px);}
-  .hero .frame{position:absolute;inset:clamp(14px,3vw,26px);border:1px solid rgba(255,255,255,.2);pointer-events:none;z-index:2}
-  .hero .frame::before{content:"";position:absolute;inset:7px;border:1px solid rgba(193,47,87,.4)}
-  .hero .watermark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:'Nunito',Arial,sans-serif;font-size:44vw;color:rgba(255,255,255,.04);z-index:1;line-height:1;pointer-events:none;user-select:none}
-  .hero .inner{position:relative;z-index:3;max-width:860px;margin:0 auto}
-  .hero .eyebrow{font-family:'Nunito',sans-serif;letter-spacing:4.5px;text-transform:uppercase;font-size:clamp(.62rem,1.6vw,.74rem);color:#ff9db4;margin-bottom:clamp(20px,4vw,30px)}
-  .hero h1{font-size:clamp(2.2rem,6.2vw,4rem);font-weight:500;letter-spacing:.5px;line-height:1.06;color:#fff}
-  .hero .creds{margin-top:20px;font-family:'Nunito',Arial,sans-serif;font-size:clamp(1.02rem,2.6vw,1.28rem);font-weight:400;color:#dbe7f5;line-height:1.55;letter-spacing:.3px}
-  .hero .sep{color:var(--accent);margin:0 8px;font-weight:600}
+  .hero{position:relative;isolation:isolate;color:#fff;overflow:hidden;text-align:left;background:linear-gradient(115deg,#00356f 0%,#004384 64%,#07528e 100%);padding:clamp(126px,11vw,158px) 0 64px}
+  .hero::before{content:"";position:absolute;z-index:-1;inset:0;background:radial-gradient(ellipse at 85% 30%,rgba(68,153,212,.19),transparent 56%);pointer-events:none}
+  .hero::after{content:"";position:absolute;z-index:-1;inset:0 0 0 48%;background:linear-gradient(135deg,transparent 49%,rgba(123,188,224,.09) 49%,rgba(123,188,224,.09) 53%,transparent 53%,transparent 57%,rgba(123,188,224,.13) 57%,rgba(123,188,224,.13) 59%,transparent 59%,transparent 65%,rgba(123,188,224,.06) 65%,rgba(123,188,224,.06) 73%,transparent 73%);pointer-events:none}
+  .hero-layout{display:grid;grid-template-columns:minmax(0,1.65fr) minmax(0,1fr);align-items:center;gap:clamp(48px,6vw,80px)}
+  .hero-copy{min-width:0}
+  .hero .eyebrow{font-family:'Nunito',sans-serif;font-size:.69rem;font-weight:700;letter-spacing:2.3px;text-transform:uppercase;color:#b6d4ee;margin-bottom:10px}
+  .hero-name{font-family:'Nunito',sans-serif;font-size:clamp(1.15rem,2.1vw,1.4rem);font-weight:600;line-height:1.3;color:#fff}
+  .hero h1{font-size:clamp(2.3rem,4.2vw,3.55rem);font-weight:700;letter-spacing:-1px;line-height:1.12;color:#fff;margin:23px 0 22px}
+  .hero h1 span{display:block}
+  .hero-roles{font-family:'Nunito',sans-serif;font-size:.95rem;line-height:1.65;color:#d4e5f5}
+  .hero-roles strong{display:block;font-weight:600;color:#fff;margin-bottom:4px}
+  .hero .lead{font-family:'Nunito',sans-serif;font-size:1.02rem;line-height:1.65;max-width:590px;margin-top:20px;color:#d4e5f5}
+  .hero .cta{margin-top:28px;display:flex;gap:14px;justify-content:flex-start;flex-wrap:wrap}
+  .hero .btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:49px;font-size:.72rem;letter-spacing:1.1px;padding:14px 22px;border-color:rgba(255,255,255,.6)}
+  .hero .btn.solid{background:#fff;border-color:#fff;color:#003c81;font-weight:800}
+  .hero .btn.solid:hover{background:#e3effa;border-color:#e3effa;color:#00356f}
+  .hero .btn.solid span{font-size:1.05rem;line-height:1}
+  .hero-location{display:flex;align-items:center;gap:10px;font-family:'Nunito',sans-serif;font-size:.78rem;line-height:1.5;color:#bcd7ed;margin-top:26px;padding-top:18px;border-top:1px solid rgba(201,224,242,.25)}
+  .hero-location::before{content:"";flex:0 0 6px;height:6px;border-radius:50%;background:#bcd7ed}
+  .hero-visual{position:relative;justify-self:center;width:min(100%,310px);aspect-ratio:1}
+  .hero-visual::before{content:"";position:absolute;inset:-29px;border:1px solid rgba(204,227,244,.24);border-radius:50%;pointer-events:none}
+  .hero-visual::after{content:"";position:absolute;inset:-47px;border:1px solid rgba(204,227,244,.1);border-radius:50%;pointer-events:none}
+  .hero-portrait{width:100%;height:100%;object-fit:cover;object-position:50% 29%;border-radius:50%;border:6px solid #eef5fb;box-shadow:0 18px 48px rgba(0,22,55,.24)}
+  .hero-badge{position:absolute;bottom:0;right:-13px;display:flex;align-items:center;justify-content:center;width:84px;aspect-ratio:1;border-radius:50%;padding:14px;background:#fff;border:4px solid #e6eef5;box-shadow:0 8px 22px rgba(0,22,55,.18)}
+  .hero-badge img{width:100%;height:100%;object-fit:contain}
+  @media(max-width:960px) and (min-width:761px){
+    .hero-layout{gap:44px;grid-template-columns:minmax(0,1.7fr) minmax(0,1fr)}
+    .hero-visual{width:240px;max-width:100%}
+    .hero-visual::after{inset:-34px}
+    .hero-visual::before{inset:-19px}
+    .hero-badge{width:69px;padding:11px;right:-8px}
+  }
+  @media(max-width:760px){
+    .hero{padding:104px 0 40px}
+    .hero::after{inset:0 0 0 25%;opacity:.8}
+    .hero-layout{grid-template-columns:minmax(0,1fr) 106px;gap:0 20px;align-items:center}
+    .hero-copy{display:contents}
+    .hero-identity{grid-column:1;grid-row:1}
+    .hero .eyebrow{font-size:.62rem;letter-spacing:1.5px;line-height:1.6;margin-bottom:8px}
+    .hero-name{font-size:1.24rem;line-height:1.3}
+    .hero h1{grid-column:1/-1;font-size:clamp(2rem,6.5vw,2.7rem);letter-spacing:-.6px;margin:25px 0 17px}
+    .hero-roles,.hero .lead,.hero .cta,.hero-location{grid-column:1/-1}
+    .hero-roles{font-size:.87rem;line-height:1.55}
+    .hero .lead{font-size:.95rem;line-height:1.6;margin-top:16px}
+    .hero .cta{margin-top:24px;gap:12px}
+    .hero-location{margin-top:24px;font-size:.74rem;padding-top:16px}
+    .hero-visual{grid-column:2;grid-row:1;width:106px}
+    .hero-visual::before{inset:-8px}
+    .hero-visual::after{display:none}
+    .hero-portrait{border-width:3px;box-shadow:none}
+    .hero-badge{width:36px;padding:5px;border-width:2px;bottom:-3px;right:-3px;box-shadow:none}
+  }
+  @media(max-width:430px){
+    .hero-layout{grid-template-columns:minmax(0,1fr) 90px;gap:0 16px}
+    .hero-visual{width:90px}
+    .hero-name{font-size:1.15rem}
+    .hero .cta{flex-direction:column;align-items:stretch;gap:10px}
+    .hero .btn{width:100%;padding:13px 16px}
+  }
   .divider{width:74px;height:2px;background:var(--accent);margin:clamp(26px,5vw,34px) auto;position:relative}
   .divider::before{content:"";position:absolute;top:-3px;left:50%;transform:translateX(-50%) rotate(45deg);width:8px;height:8px;background:var(--accent)}
-  .hero .lead{max-width:660px;margin:0 auto;font-size:var(--fs-lead);color:#e6eef8;font-style:italic}
-  .hero .cta{margin-top:clamp(32px,6vw,44px);display:flex;gap:16px;justify-content:center;flex-wrap:wrap}
   .btn{font-family:'Nunito',sans-serif;font-size:.78rem;letter-spacing:1.8px;text-transform:uppercase;padding:15px clamp(24px,4vw,34px);border:1.5px solid #fff;color:#fff;background:transparent;cursor:pointer;transition:all .3s}
   .btn:hover{background:#fff;color:var(--blue)}
   .btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
@@ -322,6 +368,14 @@
 
   /* ---------- Responsive ---------- */
   @media(max-width:960px){
+    header{height:66px}
+    .menu-btn{display:block;margin-left:auto}
+    nav.menu ul{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 14px 26px rgba(0,20,50,.12)}
+    nav.menu ul.open{display:flex}
+    nav.menu li{border-bottom:1px solid var(--line)}
+    nav.menu a{display:block;padding:17px clamp(20px,5vw,32px)}
+    .brand{gap:9px}
+    .wordmark .l2{display:block;font-size:.64rem;letter-spacing:0;line-height:1.2}
     .about{grid-template-columns:190px 1fr;gap:36px}
     .portrait{width:190px}
     .dgrid{grid-template-columns:1fr}
@@ -338,14 +392,6 @@
     .pillars .p:nth-child(2){border-right:0}
     .pillars .p:nth-child(1),.pillars .p:nth-child(2){border-bottom:1px solid var(--line-blue)}
     .contact{grid-template-columns:1fr;gap:36px}
-    .menu-btn{display:block}
-    nav.menu ul{display:none;position:absolute;top:66px;left:0;right:0;flex-direction:column;gap:0;background:#fff;border-top:1px solid var(--line);box-shadow:0 14px 26px rgba(0,20,50,.12)}
-    nav.menu ul.open{display:flex}
-    nav.menu li{border-bottom:1px solid var(--line)}
-    nav.menu a{display:block;padding:17px clamp(20px,5vw,32px)}
-    .menu-btn{margin-left:auto}
-    .brand{gap:9px}
-    .wordmark .l2{display:block;font-size:.64rem;letter-spacing:0;line-height:1.2}
     .contact-form{grid-template-columns:1fr}
   }
   /* Cookie bar — compatta, angolo in basso a sinistra */
@@ -361,16 +407,6 @@
   @media(max-width:900px){
     .cookiebar{left:0;right:0;bottom:0;top:auto;max-width:none;border-radius:12px 12px 0 0;border-left:0;border-right:0;border-bottom:0}
   }
-  /* Su schermi bassi l'hero non entra nel viewport e i pulsanti finiscono
-     sotto la piega. La versione compatta del paragrafo conserva tutti i
-     termini chiave (grafologia forense, arti grafiche, firme, scritture,
-     documenti, carta, stampa, imballaggi, macchinari) e libera lo spazio
-     necessario. Da 820px di altezza in su resta il testo esteso. */
-  .lead-compact{display:none}
-  @media(max-width:900px),(max-height:820px){
-    .lead-full{display:none}
-    .lead-compact{display:inline}
-  }
   @media(max-width:430px){
     .cookiebar{padding:7px 10px}
     .cookiebar p{font-size:.63rem;line-height:1.28}
@@ -379,12 +415,10 @@
   }
   body.cookiebar-open{padding-bottom:var(--cookiebar-h,0px)}
   .cb-short{display:none}
-  /* Finche' il banner e' visibile su schermi piccoli, l'hero riduce i propri
-     margini verticali: cosi' i pulsanti restano sopra la barra sul maggior
-     numero possibile di formati. A banner chiuso l'aspetto non cambia. */
-  @media(max-width:900px),(max-height:900px){
-    body.cookiebar-open .hero{padding-top:clamp(84px,13vw,110px);padding-bottom:clamp(12px,4vw,36px)}
-    body.cookiebar-open .hero .cta{margin-top:clamp(8px,2.4vw,18px);gap:10px}
+  /* Lo spazio aggiuntivo consente di scorrere oltre il banner Maps senza
+     coprire gli ultimi elementi della testata. */
+  @media(max-width:900px){
+    body.cookiebar-open .hero{padding-bottom:calc(40px + var(--cookiebar-h,0px))}
   }
   @media(max-width:900px),(max-height:820px){
     .cb-long{display:none}
@@ -428,7 +462,6 @@
     .wordmark .l2{font-size:.62rem;white-space:normal;max-width:240px}
     .about .head-block{text-align:center;width:100%}
     .services{grid-template-columns:1fr}
-    .hero .creds .sep{display:inline}
     .materie ul{gap:8px}
     .process{grid-template-columns:1fr}
     .process-step{min-height:0}
@@ -462,22 +495,28 @@
 </header>
 
 <!-- HERO -->
-<section class="hero" id="home">
-  <div class="frame"></div>
-  <div class="container">
-    <div class="inner">
-      <div class="eyebrow">Perizie e consulenze in tutta Italia</div>
-      <h1>Dott. Ermanno Colazzo</h1>
-      <div class="creds">
-        Perito Industriale in Arti Grafiche<span class="sep">·</span>Grafologo Forense<br>
-        Consulente Tecnico d’Ufficio e Perito del Tribunale di Lecce<span class="sep">·</span>CTU e CTP
+<section class="hero" id="home" aria-labelledby="hero-title">
+  <div class="container hero-layout">
+    <div class="hero-copy">
+      <div class="hero-identity">
+        <p class="eyebrow">Perizie e consulenze in tutta Italia</p>
+        <p class="hero-name">Dott. Ermanno Colazzo</p>
       </div>
-      <div class="divider"></div>
-      <p class="lead"><span class="lead-full">Consulenze tecniche giudiziarie e stragiudiziali nelle discipline della grafologia forense e delle arti grafiche: analisi e comparazione di firme e scritture, esame tecnico dei documenti, perizie su carta, prodotti della stampa, imballaggi, macchinari e attrezzature del settore grafico. Incarichi in tutta Italia.</span><span class="lead-compact">Grafologia forense e arti grafiche: perizie su firme, scritture e documenti, su carta, prodotti della stampa, imballaggi e macchinari. Incarichi giudiziari e stragiudiziali in tutta Italia.</span></p>
+      <h1 id="hero-title"><span>Grafologia forense</span><span>e arti grafiche</span></h1>
+      <div class="hero-roles">
+        <strong>Perito Industriale in Arti Grafiche · Grafologo Forense</strong>
+        <p>Consulente Tecnico d’Ufficio e Perito del Tribunale di Lecce · CTU e CTP</p>
+      </div>
+      <p class="lead">Perizie su firme, scritture e documenti, carta, stampa, imballaggi e macchinari. Incarichi giudiziari e stragiudiziali in tutta Italia.</p>
       <div class="cta">
-        <a href="#contatti" class="btn solid">Contatta lo studio</a>
+        <a href="#contatti" class="btn solid">Contatta lo studio <span aria-hidden="true">→</span></a>
         <a href="#iscrizioni" class="btn">Qualifiche e iscrizioni</a>
       </div>
+      <p class="hero-location">Studio a Maglie (LE) · Ricevimento su appuntamento</p>
+    </div>
+    <div class="hero-visual">
+      <img class="hero-portrait" src="/ermanno-colazzo-perito-grafologo.jpg?v=20260805-13" alt="Dott. Ermanno Colazzo" width="460" height="613" fetchpriority="high" decoding="async">
+      <span class="hero-badge" aria-hidden="true"><img src="/logo-emblem.png?v=20260805-13" alt="" width="167" height="140"></span>
     </div>
   </div>
 </section>
