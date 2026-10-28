@@ -2,6 +2,16 @@
 
 Ultimo aggiornamento: 28 ottobre 2026.
 
+## Testata con priorità al nome — 28 ottobre 2026
+
+- Dopo l’anteprima il titolare ha autorizzato la pubblicazione della variante: “Dott. Ermanno Colazzo” è l’elemento visivo principale; “Grafologia forense e arti grafiche” è il sottotitolo. Il suo testo e il singolo H1 semantico sono conservati.
+- Rimosso dalla sola testata il blocco con ritratto e logo, insieme al CSS specifico. Conservati ritratto in Chi sono, logo della navigazione, font Nunito, palette e fasce diagonali. Nessun nuovo asset o dipendenza.
+- Nome e sottotitolo misurati in anteprima: 65,6/30,4 px su desktop, 37,6/19,2 px nel viewport CSS da 390 px. Verificati leggibilità e assenza di overflow; menu mobile già collaudato. Si tratta di verifica nel browser, non su dispositivi fisici.
+- Il confronto con il commit di base conferma head e metadati, script, modulo e sezioni successive identici; ID unici e ancore valide. Il modulo resta operativo nel sorgente del sito: il blocco d’invio era presente soltanto nel file di anteprima.
+- File del rilascio: `index.html`, `CONTEXT.md`, `LEARNING.md`. Sitemap già datata 28 ottobre per la home: nessun ulteriore aggiornamento. Nessuna modifica a URL, DNS, hosting o posta.
+- Rilascio attraverso il repository e il deploy Cloudflare Pages esistenti. Verificare il check del commit integrato e poi il dominio canonico; la sola anteprima non dimostra la pubblicazione.
+- Rollback: ripristinare il solo `index.html` dal commit precedente `206b782216e38edad4ae1c20ef40f208e567c423`, dopo aver verificato modifiche intervenute successivamente. I file immagine originali restano disponibili.
+
 ## Ridisegno della testata — 28 ottobre 2026
 
 - Base stabile: `e929b1ec4153e3825ca1b966d22d0d9b5ec98b69`, con check Cloudflare Pages riuscito sul progetto esistente `ermannocolazzo`.
