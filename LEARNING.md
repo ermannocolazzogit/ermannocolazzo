@@ -1,5 +1,11 @@
 # Decisioni e apprendimenti
 
+## Nome non spezzato sul cellulare — 29 ottobre 2026
+
+Problema: il minimo di 2,35 rem imposto al nome lo portava su due righe sui telefoni, come mostrato dal titolare. Opzioni: ridurre il carattere in funzione del viewport o abbreviare il nome. Scelta: conservare il testo completo e correggere una sola regola CSS mobile con `clamp(1.4rem,7.6vw,3.25rem)` e `white-space: nowrap`.
+
+Motivazione: mantenere il nome su una riga, più evidente del sottotitolo, senza modificare il desktop. Verifiche in iframe CSS a 320, 360, 390, 430, 760 e 768 px: una riga, nessun taglio e nessuno scorrimento orizzontale; confronto con main limitato a una riga CSS. Nessuna modifica a HTML, SEO, script o modulo. Limite: le prove non sono su telefoni fisici o con tutte le impostazioni personalizzate dei caratteri. Rollback alla regola mobile del commit `1f986e694b90469d57b6ec3a58e56e9777342fc9`.
+
 ## Nome in primo piano e rimozione dei duplicati — 28 ottobre 2026
 
 Problema e stato precedente: il nuovo ritratto nella testata ripeteva la foto di Chi sono, il logo ripeteva quello della navigazione e il nome era meno evidente dei servizi. Il titolare ha chiesto una variante, l’ha esaminata in anteprima e ne ha poi autorizzato la pubblicazione.
