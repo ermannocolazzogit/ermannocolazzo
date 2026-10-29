@@ -1,6 +1,14 @@
 # Stato del progetto
 
-Ultimo aggiornamento: 28 ottobre 2026.
+Ultimo aggiornamento: 29 ottobre 2026.
+
+## Nome su una riga nel layout mobile — 29 ottobre 2026
+
+- Ridotto il minimo del carattere del nome nel breakpoint fino a 760 px e aggiunto `white-space: nowrap`. Il nome si adatta al viewport e rimane più grande del sottotitolo. La regola desktop è invariata.
+- Browser: prove con iframe CSS a 320, 360, 390, 430, 760 e 768 px, oltre al desktop. Nome su una riga, senza tagli o overflow, nelle larghezze mobili; il desktop mantiene 65,6 px. Non è una prova su telefoni fisici.
+- Il confronto con la base `1f986e694b90469d57b6ec3a58e56e9777342fc9` rileva una sola riga CSS cambiata in `index.html`: HTML, metadati, H1, script, modulo, URL e contenuti sono identici.
+- File del rilascio: `index.html`, `CONTEXT.md`, `LEARNING.md`. Nessuna modifica a sitemap, asset, dipendenze o configurazione hosting.
+- Rollback: ripristinare la sola regola mobile `.hero-name` dalla base indicata, preservando modifiche successive. Verificare check Cloudflare e sorgente live dopo l’integrazione.
 
 ## Testata con priorità al nome — 28 ottobre 2026
 
