@@ -99,6 +99,9 @@ Disallow: /
 User-agent: ICC-Crawler
 Disallow: /
 
+User-agent: atlassian-bot
+Disallow: /
+
 User-agent: FishBot
 Disallow: /
 
