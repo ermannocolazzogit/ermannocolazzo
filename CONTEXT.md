@@ -1,6 +1,13 @@
 # Stato del progetto
 
-Ultimo aggiornamento: 29 ottobre 2026.
+Ultimo aggiornamento: 16 novembre 2026.
+
+## Pulizia SEO dopo l'audit del 16 novembre 2026
+
+- `noindex, follow` su privacy e cookie policy; le due URL tolte dalla sitemap (ora 9 URL). Le pagine restano raggiungibili dal footer.
+- Homepage: gli H2 dei due blocchi d'ambito non duplicano più gli H1 di `/perizie-grafologiche/` e `/perizie-arti-grafiche/` ("Perizie su firme e scritture", "Perizie su carta, stampa e imballaggi"); l'H2 della sezione iscrizioni ora descrive la sezione. H1, title, description, canonical, JSON-LD e modulo invariati. `lastmod` home al 16/11.
+- Rimosso `social-card.png` (729 KB, non referenziato da alcuna pagina) e la sua regola in `_headers`; resta `social-card.jpg`, usata da `og:image`.
+- Rollback: revert del commit di questo intervento; base `2199e815eaaacb00024bf83e202f480d4671f58f`.
 
 ## Nome su una riga nel layout mobile — 29 ottobre 2026
 

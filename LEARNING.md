@@ -1,5 +1,9 @@
 # Decisioni e apprendimenti
 
+## Pulizia SEO post-audit — 16 novembre 2026
+
+Problema: l'audit ha rilevato cannibalizzazione interna (due H2 della homepage identici agli H1 delle pagine di servizio, mentre la homepage raccoglie 9 clic su 11), informative indicizzate che compaiono fra i risultati del sito e un asset da 729 KB inutilizzato. Decisione: correzioni minime e reversibili, senza toccare URL, title, canonical, dati strutturati o modulo. Le informative passano a `noindex, follow` e escono dalla sitemap; gli H2 della homepage diventano rimandi distinti. Non misurabile l'effetto prima di almeno 28 giorni di dati GSC successivi al deploy.
+
 ## Nome non spezzato sul cellulare — 29 ottobre 2026
 
 Problema: il minimo di 2,35 rem imposto al nome lo portava su due righe sui telefoni, come mostrato dal titolare. Opzioni: ridurre il carattere in funzione del viewport o abbreviare il nome. Scelta: conservare il testo completo e correggere una sola regola CSS mobile con `clamp(1.4rem,7.6vw,3.25rem)` e `white-space: nowrap`.

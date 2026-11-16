@@ -36,9 +36,6 @@
 /social-card.jpg
   Cache-Control: public, max-age=604800
 
-/social-card.png
-  Cache-Control: public, max-age=604800
-
 # L'HTML resta sul default di Pages, deliberatamente. TTFB misurato in
 # produzione: mediana 150 ms su 8 richieste (94-217 ms), contro una
 # soglia "buona" di 800 ms. Dare all'HTML una cache edge lunga e' il modo
